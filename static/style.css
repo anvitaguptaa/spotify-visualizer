@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+body {
+  background-color: #eee;
+  font-family: 'Raleway', sans-serif;
+}
+
+.cover {
+    width: 450px;
+    height: 450px;
+    z-index: 2;
+
+    background-color: #555;
+}
+
+.large-cover {
+    width: 93%;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+
+    background-color: #555;
+    box-shadow: 0 7px 10px #aaa;
+}
+
+/*Basic Vinyl Style*/
+.album {
+  margin: 3.5%; 
+  box-shadow: 0 7px 10px #aaa;
+}
+
+.album,
+.album .vinyl {
+  width: 450px;
+  height: 450px;
+}
+
+.album > div,
+.album .vinyl > div {
+  position: absolute;
+}
+
+.album .cover {
+  z-index: 2;
+}
+
+.album .vinyl {
+  background-color: #202020;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.album .vinyl .label {
+  background-color: #AF8F80;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 25%;
+}
+
+.album .vinyl .hole {
+  background-color: #eee;
+  width: 5%;
+  height: 5%;
+  margin: 45% auto 0 auto;
+}
+
+.album .textCon {
+  margin-top: 10px;
+}
+
+.album .textCon h1,
+.album .textCon h3 {
+  color: #eee;
+  font-size: 0.95em;
+  text-align: center;
+  letter-spacing: 3px;
+  margin: 5px 0;
+}
+
+.album .textCon h3 {
+  font-size: 0.75em;
+}
+
+
+/*Vinyl Style*/
+
+.albumVinyl .round {
+  border-radius: 9999px;
+}
+
+.albumVinyl .vinyl {
+  transform: translate(50px, 0) rotate(-180deg);
+}
+
+.albumVinyl .vinyl:hover,
+.albumVinyl .cover:hover + .vinyl {
+  transform: translate(450px, 0) rotate(0deg);
+}
