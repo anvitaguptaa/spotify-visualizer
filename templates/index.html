@@ -10,18 +10,32 @@
                 <!-- COVER ART -->
             </div>
             <div class="vinyl round">
-              <div class="label round">
-                <div class="hole round">
-                </div>
-                <div class="textCon">
-                  <h1>Username's</h1>
-                  <h3>Personal Vinyl</h3>
-                </div>
-              </div>
+            	<div class="label round">
+                	<div class="hole round">
+                	</div>
+                	<div class="textCon">
+                  		<h1>Username's</h1>
+                  		<h3>Personal Vinyl</h3>
+                	</div>
+              	</div>
             </div>
         </div>
         <div class="large-cover"> 
-            <!-- COVER ART -->
+            <div class="top-songs">
+            	<p class="top-songs"> A SIDE<br></p>
+              	<div class="side">
+              	{% for i in range(0, 5) %}
+               		<p>{{ top_tracks[i] }}</p>
+              	{%endfor%}
+              	</div>
+              	<p class="top-songs"> B SIDE<br></p>
+              	<div class="side">
+				{% for i in range(5, 10) %}
+					<p>{{ top_tracks[i] }}</p>
+				{%endfor%}
+              	</div>
+
+            </div>
         </div>
     </div>
 </body>
