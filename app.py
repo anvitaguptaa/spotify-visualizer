@@ -38,29 +38,47 @@ class Client:
         self.token = oauth_token()
         self.headers = make_headers(self.token)
         self.client = spotipy.Spotify(auth=self.token)
+        self.name = self.client.current_user()['display_name']
         self.top_track_info = {'track_arr' : [], 'id_arr' : []}
+        self.features_info = {'danceability' : 0, 'energy' : 0, 'key' : 0, 'loudness' : 0, 
+                              'mode' : 0, 'speechiness' : 0, 'acousticness' : 0, 
+                              'instrumentalness' : 0, 'liveness' : 0, 'valence' : 0, 'tempo' : 0}
 
 
-    def save_track_info(self):
-        top_tracks = self.client.current_user_top_tracks(time_range='long_term')
+    def parse_track_info(self):
+        top_tracks = self.client.current_user_top_tracks(limit=10, time_range='long_term')
 
         for track in top_tracks['items']:
             self.top_track_info['track_arr'].append(track['name'].upper() + ' - ' + track['artists'][0]['name'].upper())
             self.top_track_info['id_arr'].append(track['id'])
             
-        # print(self.top_track_info)
-        # print(self.client.audio_features('22gXA7HlEd0z13zdc3hju7'))
+
+    def parse_features_info(self):        
+        for id in self.top_track_info['id_arr']:
+            features = self.client.audio_features(id)
+            
+            for key, value in features[0].items():
+                if not key in self.features_info: 
+                    break
+
+                self.features_info[key] += value
+
+        for feature in self.features_info.keys():
+            self.features_info[feature] /= 10
 
 
 if __name__ == "__main__":
     client = Client()
-    client.save_track_info()
+    client.parse_track_info()
+    client.parse_features_info()
     top_tracks = client.top_track_info['track_arr']
 
 
 @app.route('/')
 def hello():
     client = Client()
-    client.save_track_info()
+    name = client.name.upper()
+    client.parse_track_info()
+    client.parse_features_info()
     top_tracks = client.top_track_info['track_arr']
-    return render_template('index.html', top_tracks=top_tracks)
+    return render_template('index.html', name=name, top_tracks=top_tracks)
