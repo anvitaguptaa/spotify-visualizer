@@ -44,8 +44,6 @@ body {
   background-color: transparent;
   width: 900px;
   height: 900px;
-  
-  /* perspective: 1000px; */
 }
 
 .large-cover-inner {
@@ -55,21 +53,23 @@ body {
   text-align: center;
   
   transition: transform 0.6s;
+  /* transform: rotateY(180deg); */
   transform-style: preserve-3d;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  /* backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden; */
 }
 
-.large-cover:focus {
+/* .large-cover:focus {
     outline: 0;
-}
-
-.large-cover:hover .large-cover-inner,
+} */
+/* 
+.large-cover-inner {
+  transform: rotateY(180deg);
+} */
+/* .large-cover:hover .large-cover-inner,
 .large-cover:focus .large-cover-inner{
   transform: rotateY(180deg);
-}
+} */
 
 .large-cover-front,
 .large-cover-back {
@@ -93,7 +93,7 @@ body {
 .large-cover-back {
   background:#555;
   color: white;
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -166,20 +166,22 @@ body {
 }
 
 .album .textCon {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .album .textCon h1,
 .album .textCon h3 {
   color: #eee;
-  font-size: 0.95em;
+  font-size: 70%;
   text-align: center;
+  justify-content: center;
+  justify-items: center;
   letter-spacing: 3px;
   margin: 5px 0;
 }
 
 .album .textCon h3 {
-  font-size: 0.75em;
+  font-size: 60%;
 }
 
 

@@ -78,6 +78,7 @@ if __name__ == "__main__":
 def hello():
     client = Client()
     name = client.name.upper()
+    # name = 'karabelas.pittman'.upper()
     client.parse_track_info()
     client.parse_features_info()
     top_tracks = client.top_track_info['track_arr']
