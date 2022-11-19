@@ -38,6 +38,9 @@ body {
     margin-right: auto;
   }
 
+  .album {
+    margin-left: 3.3rem;
+  }
 }
 
 .large-cover {
@@ -124,7 +127,9 @@ body {
 
 /*Basic Vinyl Style*/
 .album {
-  margin: 3.5%; 
+  margin-bottom: 3.5%;
+  margin-top: 3.5%;
+  /* margin: 3.5%;  */
   box-shadow: 0 7px 10px #aaa;
   /* margin-left: 3rem; */
 }
@@ -189,15 +194,6 @@ body {
 
 .albumVinyl .round {
   border-radius: 9999px;
-}
-
-.albumVinyl .vinyl {
-  transform: translate(50px, 0) rotate(-180deg);
-}
-
-.albumVinyl .vinyl:hover,
-.albumVinyl .cover:hover + .vinyl {
-  transform: translate(450px, 0) rotate(0deg);
 }
 
 .cover:hover {
