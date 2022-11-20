@@ -1,5 +1,9 @@
 const small_cover = document.querySelector(".cover");
 const vinyl = document.querySelector(".vinyl");
+const large_cover = document.querySelector(".large-cover");
+const coverContent = document.querySelector(".large-cover-inner");
+
+let cover_flipped = false;
 let small_cover_clicked = false;
 
 small_cover.addEventListener("click", () => {
@@ -11,12 +15,7 @@ small_cover.addEventListener("click", () => {
     small_cover_clicked = !small_cover_clicked;
 });
 
-
-const cover = document.querySelector(".large-cover");
-const coverContent = document.querySelector(".large-cover-inner");
-let cover_flipped = false;
-
-cover.addEventListener("click", () => {
+large_cover.addEventListener("click", () => {
     if(!cover_flipped) {
         coverContent.style.transform = "rotateY(180deg)"
     }   else {

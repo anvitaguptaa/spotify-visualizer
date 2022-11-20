@@ -62,18 +62,6 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* .large-cover:focus {
-    outline: 0;
-} */
-/* 
-.large-cover-inner {
-  transform: rotateY(180deg);
-} */
-/* .large-cover:hover .large-cover-inner,
-.large-cover:focus .large-cover-inner{
-  transform: rotateY(180deg);
-} */
-
 .large-cover-front,
 .large-cover-back {
   position: absolute;
@@ -129,9 +117,7 @@ body {
 .album {
   margin-bottom: 3.5%;
   margin-top: 3.5%;
-  /* margin: 3.5%;  */
   box-shadow: 0 7px 10px #aaa;
-  /* margin-left: 3rem; */
 }
 
 .album,
@@ -178,6 +164,7 @@ body {
 .album .textCon h3 {
   color: #eee;
   font-size: 70%;
+  font-weight: bold;
   text-align: center;
   justify-content: center;
   justify-items: center;
@@ -186,7 +173,7 @@ body {
 }
 
 .album .textCon h3 {
-  font-size: 60%;
+  font-size: 70%;
 }
 
 

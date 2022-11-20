@@ -43,6 +43,7 @@ class Client:
         self.features_info = {'danceability' : 0, 'energy' : 0, 'key' : 0, 'loudness' : 0, 
                               'mode' : 0, 'speechiness' : 0, 'acousticness' : 0, 
                               'instrumentalness' : 0, 'liveness' : 0, 'valence' : 0, 'tempo' : 0}
+        self.top_artist_info = {}
 
 
     def parse_track_info(self):
@@ -67,18 +68,29 @@ class Client:
             self.features_info[feature] /= 10
 
 
+    def parse_artists_info(self):
+        top_artists = self.client.current_user_top_artists(limit=10, time_range='long_term')
+
+        for artist in top_artists['items']:
+            self.top_artist_info[artist['name']] = artist['genres']
+
+        # print(self.top_artist_info)
+
+        print(self.client.recommendation_genre_seeds())
+
 if __name__ == "__main__":
     client = Client()
     client.parse_track_info()
     client.parse_features_info()
     top_tracks = client.top_track_info['track_arr']
+    client.parse_artists_info()
+    # print(client.features_info)
 
 
 @app.route('/')
 def hello():
     client = Client()
     name = client.name.upper()
-    # name = 'karabelas.pittman'.upper()
     client.parse_track_info()
     client.parse_features_info()
     top_tracks = client.top_track_info['track_arr']
