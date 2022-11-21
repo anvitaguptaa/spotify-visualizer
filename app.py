@@ -76,7 +76,7 @@ class Client:
 
         # print(self.top_artist_info)
 
-        print(self.client.recommendation_genre_seeds())
+        # print(self.client.recommendation_genre_seeds())
 
 if __name__ == "__main__":
     client = Client()

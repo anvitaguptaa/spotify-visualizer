@@ -7,6 +7,13 @@
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
+:root {
+  --red: rgba(181, 31, 31, 0.812);
+  --crimson: rgba(114, 21, 21, 0.829);
+  --dark_red: rgba(47, 10, 10, 0.764);
+  
+  
+}
 
 body {
   background-color: #eee;
