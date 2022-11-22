@@ -44,10 +44,10 @@ class Client:
                               'mode' : 0, 'speechiness' : 0, 'acousticness' : 0, 
                               'instrumentalness' : 0, 'liveness' : 0, 'valence' : 0, 'tempo' : 0}
         self.top_artist_info = {}
-        self.genres_regex = '(rap|hip hop)|(pop)|(r&b)|(indie|alternative|psych)|(soul|funk)|(rock|metal)|(country|folk)|(gospel)|(ambient|romance|sad|study|chill|happy)|(electronic|edm|dubstep|techno|house)|(classical|piano|opera)|(jazz|blues|bossa nova)'
+        self.genres_regex = '(rap|hip hop)|(pop)|(r&b)|(indie|alternative|psych)|(soul|funk)|(rock|metal)|(country|folk)|(gospel)|(ambient|romance|sad|study|chill|happy)|(electronic|edm|dubstep|techno|house)|(classical|piano|opera)|(jazz|blues|bossa nova)|(reggae|samba|afrobeat|latino|salsa)'
         self.genre_matches = {'rap' : 0, 'pop' : 0, 'r&b' : 0, 'indie' : 0, 'soul' : 0, 
-                              'rock' : 0, 'country' : 0, 'gospel' : 0, 
-                              'ambient' : 0, 'electronic' : 0, 'classical' : 0, 'jazz' : 0, 'other' : 0}
+                              'rock' : 0, 'country' : 0, 'gospel' : 0, 'ambient' : 0, 
+                              'electronic' : 0, 'classical' : 0, 'jazz' : 0, 'reggae' : 0, 'other' : 0}
 
 
     def parse_track_info(self):
@@ -104,6 +104,8 @@ class Client:
             self.genre_matches['classical'] += 1
         elif group == 10:
             self.genre_matches['jazz'] += 1
+        elif group == 11:
+            self.genre_matches['reggae'] += 1
         else:
             self.genre_matches['other'] += 1
 
@@ -137,7 +139,8 @@ if __name__ == "__main__":
 
     # print(client.features_info)
 
-
+# TODO: Main route has spinning vinyl background 
+#   and prompts you to create your personal one which takes you to login etc.
 @app.route('/')
 def hello():
     client = Client()

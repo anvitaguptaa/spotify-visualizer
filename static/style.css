@@ -8,11 +8,20 @@
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
 :root {
-  --red: rgba(181, 31, 31, 0.812);
-  --crimson: rgba(114, 21, 21, 0.829);
-  --dark_red: rgba(47, 10, 10, 0.764);
-
-  
+  --sky-blue: rgb(98, 138, 202); /* Pop */
+  --dark-blue: #0a0a2d;/* Rap */
+  --purple:  /* R&B */
+  --light-green: /* Indie */
+  --orange: ;/* Soul */
+  --dark-red: rgba(114, 21, 21, 0.829);/* Rock */
+  --brown: /* Country */;
+  --sienna: #A0522D; /* Gospel */
+  --yellow-green: /* Ambient */
+  --silver: /* Electronic */
+  --lavender: /* Classical */
+  --pink: /* Jazz */
+  --red: /* Reggae */
+  --grey: /* Other */
 }
 
 body {
@@ -25,7 +34,7 @@ body {
     height: 450px;
     z-index: 2;
 
-    /* background-color: #555; */
+    /* background-color: var(--sky-blue); */
 }
 
 @media (min-width: 320px) {

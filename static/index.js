@@ -25,7 +25,35 @@ largeCover.addEventListener("click", () => {
 });
 
 function getColour(genre) {
+    console.log("GENRE: ", genre);
     
+    if (genre == 'rap') {
+        colour = '--red';
+    } else if (genre == 'pop') {
+
+    } else if (genre == 'r&b') {
+
+    } else if (genre == 'indie') {
+
+    } else if (genre == 'soul') {
+
+    } else if (genre == 'rock') {
+
+    } else if (genre == 'country') {
+
+    } else if (genre == 'gospel') {
+
+    } else if (genre == 'ambient') {
+
+    } else if (genre == 'electronic') {
+
+    } else if (genre == 'classical') {
+
+    } else if (genre == 'jazz') {
+
+    } else if (genre == 'other') {
+
+    }
 };
 
 function coverColour(genresArr) {
@@ -35,8 +63,12 @@ function coverColour(genresArr) {
     let genresLength = topGenres.length;
     console.log(genresLength);
 
+    if (genresLength == 1) {
+        getColour(topGenres[0]);
+    }
+
 
 };
 
-smallCover.style.backgroundColor =  "#555";
-coverContent.style.backgroundColor = "#555";
+smallCover.style.backgroundColor =  "var(--dark-blue)";
+coverContent.style.backgroundColor =  "var(--dark-blue)";
