@@ -46,8 +46,8 @@ class Client:
         self.top_artist_info = {}
         self.genres_regex = '(rap|hip hop)|(pop)|(r&b)|(indie|alternative|psych)|(soul|funk)|(rock|metal)|(country|folk)|(gospel)|(ambient|romance|sad|study|chill|happy)|(electronic|edm|dubstep|techno|house)|(classical|piano|opera)|(jazz|blues|bossa nova)'
         # self.genres_regex = 'rap|hip\shop|pop|r&b|indie|alternative|psych|soul|funk|rock|metal|country|folk|gospel|ambient|romance|sad|study|chill|happy|electronic|edm|dubstep|techno|house|classical|piano|opera|jazz|blues|bossa\snova'
-        self.genre_matches = {'rap' : 0, 'pop' : 0, 'r&b' : 0, 'indie' : 0, 'jazz' : 0, 
-                              'soul' : 0, 'rock' : 0, 'country' : 0, 'gospel' : 0, 
+        self.genre_matches = {'rap' : 0, 'pop' : 0, 'r&b' : 0, 'indie' : 0, 'soul' : 0, 
+                              'rock' : 0, 'country' : 0, 'gospel' : 0, 
                               'ambient' : 0, 'electronic' : 0, 'classical' : 0, 'jazz' : 0, 'other' : 0}
 
 
@@ -74,25 +74,57 @@ class Client:
 
 
     def parse_artists_info(self):
-        top_artists = self.client.current_user_top_artists(limit=20, time_range='long_term')
+        top_artists = self.client.current_user_top_artists(limit=10, time_range='long_term')
 
         for artist in top_artists['items']:
             self.top_artist_info[artist['name']] = artist['genres']
 
-        # print(self.top_artist_info)
 
-        # print(self.client.recommendation_genre_seeds())
+    def genre_counter(self, group):
+        if group == 0:
+            self.genre_matches['rap'] += 1
+        elif group == 1:
+            self.genre_matches['pop'] += 1
+        elif group == 2:
+            self.genre_matches['r&b'] += 1
+        elif group == 3:
+            self.genre_matches['indie'] += 1
+        elif group == 4:
+            self.genre_matches['soul'] += 1
+        elif group == 5:
+            self.genre_matches['rock'] += 1
+        elif group == 6:
+            self.genre_matches['country'] += 1
+        elif group == 7:
+            self.genre_matches['gospel'] += 1
+        elif group == 8:
+            self.genre_matches['ambient'] += 1
+        elif group == 9:
+            self.genre_matches['electronic'] += 1
+        elif group == 10:
+            self.genre_matches['classical'] += 1
+        elif group == 10:
+            self.genre_matches['jazz'] += 1
+        else:
+            self.genre_matches['other'] += 1
 
 
     def get_top_genre(self):
-        artist_genres = str(list(self.top_artist_info.values())[0])
-        # print(artist_genres)
-
+        artist_genres = str(list(self.top_artist_info.values())[10])
         result = re.findall(self.genres_regex, artist_genres)
-        print(result)
-        # result = re.search(self.genres_regex, artist_genres)
-        # print(result.group())
-        # print(result.groups())
+
+        for matches in result:
+            group = 0
+            for match in matches:
+                if match:
+                    self.genre_counter(group)
+                else:
+                    group += 1
+
+        # TODO: SHOULD I RETURN SINGLE OR MULTIPLE MAX KEYS
+        max_keys = [key for key, value in self.genre_matches.items() 
+                    if value == max(self.genre_matches.values())]
+        print(max_keys)
         
 
 
