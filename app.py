@@ -45,7 +45,6 @@ class Client:
                               'instrumentalness' : 0, 'liveness' : 0, 'valence' : 0, 'tempo' : 0}
         self.top_artist_info = {}
         self.genres_regex = '(rap|hip hop)|(pop)|(r&b)|(indie|alternative|psych)|(soul|funk)|(rock|metal)|(country|folk)|(gospel)|(ambient|romance|sad|study|chill|happy)|(electronic|edm|dubstep|techno|house)|(classical|piano|opera)|(jazz|blues|bossa nova)'
-        # self.genres_regex = 'rap|hip\shop|pop|r&b|indie|alternative|psych|soul|funk|rock|metal|country|folk|gospel|ambient|romance|sad|study|chill|happy|electronic|edm|dubstep|techno|house|classical|piano|opera|jazz|blues|bossa\snova'
         self.genre_matches = {'rap' : 0, 'pop' : 0, 'r&b' : 0, 'indie' : 0, 'soul' : 0, 
                               'rock' : 0, 'country' : 0, 'gospel' : 0, 
                               'ambient' : 0, 'electronic' : 0, 'classical' : 0, 'jazz' : 0, 'other' : 0}
@@ -109,8 +108,8 @@ class Client:
             self.genre_matches['other'] += 1
 
 
-    def get_top_genre(self):
-        artist_genres = str(list(self.top_artist_info.values())[10])
+    def get_top_genres(self):
+        artist_genres = str(list(self.top_artist_info.values())[0])
         result = re.findall(self.genres_regex, artist_genres)
 
         for matches in result:
@@ -125,9 +124,8 @@ class Client:
         max_keys = [key for key, value in self.genre_matches.items() 
                     if value == max(self.genre_matches.values())]
         print(max_keys)
+        return max_keys
         
-
-
 
 if __name__ == "__main__":
     client = Client()
@@ -135,7 +133,7 @@ if __name__ == "__main__":
     client.parse_features_info()
     top_tracks = client.top_track_info['track_arr']
     client.parse_artists_info()
-    client.get_top_genre()
+    top_genres = client.get_top_genres()
 
     # print(client.features_info)
 
@@ -144,7 +142,14 @@ if __name__ == "__main__":
 def hello():
     client = Client()
     name = client.name.upper()
+
     client.parse_track_info()
     client.parse_features_info()
+
     top_tracks = client.top_track_info['track_arr']
-    return render_template('index.html', name=name, top_tracks=top_tracks)
+
+    client.parse_artists_info()
+    
+    top_genres = list(client.get_top_genres())
+
+    return render_template('index.html', name=name, top_tracks=top_tracks, top_genres=top_genres)

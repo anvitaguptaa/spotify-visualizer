@@ -11,7 +11,7 @@
   --red: rgba(181, 31, 31, 0.812);
   --crimson: rgba(114, 21, 21, 0.829);
   --dark_red: rgba(47, 10, 10, 0.764);
-  
+
   
 }
 
@@ -25,7 +25,7 @@ body {
     height: 450px;
     z-index: 2;
 
-    background-color: #555;
+    /* background-color: #555; */
 }
 
 @media (min-width: 320px) {
@@ -80,7 +80,7 @@ body {
 }
 
 .large-cover-front {
-  background:#555;
+  /* background:#555; */
   color: white;
   z-index: 2;
   display: flex;
@@ -89,7 +89,7 @@ body {
 }
 
 .large-cover-back {
-  background:#555;
+  /* background:#555; */
   color: white;
   /* transform: rotateY(180deg); */
   z-index: 1;

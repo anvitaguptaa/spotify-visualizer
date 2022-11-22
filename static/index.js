@@ -1,26 +1,42 @@
-const small_cover = document.querySelector(".cover");
+const smallCover = document.querySelector(".cover");
 const vinyl = document.querySelector(".vinyl");
-const large_cover = document.querySelector(".large-cover");
+const largeCover = document.querySelector(".large-cover");
 const coverContent = document.querySelector(".large-cover-inner");
 
-let cover_flipped = false;
-let small_cover_clicked = false;
+let coverFlipped = false;
+let smallCoverClicked = false;
 
-small_cover.addEventListener("click", () => {
-    if(!small_cover_clicked) {
+smallCover.addEventListener("click", () => {
+    if(!smallCoverClicked) {
         vinyl.style.transform = "translate(450px, 0) rotate(0deg)"
     }   else {
         vinyl.style.transform = "translate(50px, 0) rotate(-180deg)"
     }
-    small_cover_clicked = !small_cover_clicked;
+    smallCoverClicked = !smallCoverClicked;
 });
 
-large_cover.addEventListener("click", () => {
-    if(!cover_flipped) {
+largeCover.addEventListener("click", () => {
+    if(!coverFlipped) {
         coverContent.style.transform = "rotateY(180deg)"
     }   else {
         coverContent.style.transform = "rotateY(0deg)"
     }
-    cover_flipped = !cover_flipped;
+    coverFlipped = !coverFlipped;
 });
 
+function getColour(genre) {
+    
+};
+
+function coverColour(genresArr) {
+    var topGenres = genresArr;
+    console.log(topGenres);
+
+    let genresLength = topGenres.length;
+    console.log(genresLength);
+
+
+};
+
+smallCover.style.backgroundColor =  "#555";
+coverContent.style.backgroundColor = "#555";
