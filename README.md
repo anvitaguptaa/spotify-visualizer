@@ -18,7 +18,7 @@ https://mastersofmedia.hum.uva.nl/blog/2011/04/26/visualising-music-the-problems
 - ![#9aae7c](https://placehold.co/15x15/9aae7c/9aae7c.png) `Green`: Alternative, Indie, Indie-pop, Psych
 - ![#cabf78](https://placehold.co/15x15/cabf78/cabf78.png) `Yellow`: Country, Bluegrass
 - ![#db9f66](https://placehold.co/15x15/db9f66/db9f66.png) `Orange`: Soul, Funk, Groove
-- ![#470e0e](https://placehold.co/15x15/470e0e/470e0e.png) `Crimson`: Rock, Alt-Rock, Punk, Punk-Rock, Goth, Grindcore, Metal, Black-metal, Death-metal, Heavy-metal, Metalcore
+- ![#470e0e](https://placehold.co/15x15/470e0e/470e0e.png) `Crimson`: Rock, Punk, Goth, Grindcore, Metal
 - ![#7d5f52](https://placehold.co/15x15/7d5f52/7d5f52.png) `Brown`: Gospel
 - ![#555](https://placehold.co/15x15/555/555.png) `Grey`: Other
 
