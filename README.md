@@ -14,7 +14,7 @@ https://mastersofmedia.hum.uva.nl/blog/2011/04/26/visualising-music-the-problems
 - ![#C0C0C0](https://placehold.co/15x15/C0C0C0/C0C0C0.png) `Silver`: Electronic, Dubstep, EDM, Techno, House, Club, Dance, Party
 - ![#181c3d](https://placehold.co/15x15/181c3d/181c3d.png) `Dark Blue`: Hip-Hop, Rap
 - ![#628aca](https://placehold.co/15x15/628aca/628aca.png) `Sky Blue`: Pop, K-pop 
-- ![#6c929e](https://placehold.co/15x15/6c929e/6c929e.png) `Teal`: Ambient, Romance, Sad, Study, Chill, Happy
+- ![#6c929e](https://placehold.co/15x15/6c929e/6c929e.png) `Teal`: Ambient
 - ![#9aae7c](https://placehold.co/15x15/9aae7c/9aae7c.png) `Green`: Alternative, Indie, Indie-pop, Psych
 - ![#cabf78](https://placehold.co/15x15/cabf78/cabf78.png) `Yellow`: Country, Bluegrass
 - ![#db9f66](https://placehold.co/15x15/db9f66/db9f66.png) `Orange`: Soul, Funk, Groove
