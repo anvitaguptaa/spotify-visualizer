@@ -67,15 +67,18 @@ function coverColor(genresArr) {
     console.log(genresLength);
 
     if (genresLength == 1) {
-        color = getColor(topGenres[0]);
-        
+        // color = getColor(topGenres[0]);
+        color = "var(--pink)";
+
         smallCover.style.backgroundColor =  color;
         coverContent.style.backgroundColor = color;
     } else {
         firstColor = getColor(topGenres[0]);
         secondColor = getColor(topGenres[1]);
 
-        smallCover.style.background =  `linear-gradient(${firstColor}, ${secondColor})`;
-        coverContent.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
+        // smallCover.style.background =  `linear-gradient(${firstColor}, ${secondColor})`;
+        smallCover.style.background =  "var(--purple)";
+        // coverContent.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
+        coverContent.style.background =  "var(--purple)";
     }
 };

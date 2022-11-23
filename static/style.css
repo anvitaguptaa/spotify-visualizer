@@ -8,20 +8,20 @@
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
 :root {
-  --sky-blue: rgba(98, 138, 202, 0.931); /* Pop */
-  --dark-blue: #0a0a2dec;/* Rap */
-  --purple:  /* R&B */
-  --light-green: /* Indie */
-  --orange: ;/* Soul */
-  --dark-red: rgba(114, 21, 21, 0.829);/* Rock */
-  --brown: /* Country */;
-  --sienna: #A0522D; /* Gospel */
-  --yellow-green: ;/* Ambient */
+  --purple:  #1b1121ec; /* R&B */
+  --lavender:  #977fa5ec; /* Classical */ 
+  --pink: #c29ba6;/* Jazz */
   --silver: #C0C0C0; /* Electronic */
-  --lavender: /* Classical */
-  --pink: /* Jazz */
-  --red: ;/* Reggae */
   --grey: #555;/* Other */
+  --dark-blue: #181c3df6;/* Rap */
+  --sky-blue: #628aca; /* Pop */
+  --teal: #6c929e; /* Ambient */
+  --green: #9aae7ceb;/* Indie */
+  --yellow: #cabf78ee; /* Country */
+  --orange: #db9f66f0;/* Soul */
+  --red: rgba(135, 26, 26, 0.9); /* Reggae */
+  --crimson: #470e0e;/* Rock */
+  --brown: #7d5f52; /* Gospel */
 }
 
 body {

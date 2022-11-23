@@ -111,7 +111,7 @@ class Client:
 
 
     def get_top_genres(self):
-        artist_genres = str(list(self.top_artist_info.values())[6])
+        artist_genres = str(list(self.top_artist_info.values())[0])
         result = re.findall(self.genres_regex, artist_genres)
 
         for matches in result:
