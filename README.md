@@ -22,7 +22,5 @@ https://mastersofmedia.hum.uva.nl/blog/2011/04/26/visualising-music-the-problems
 - ![#7d5f52](https://placehold.co/15x15/7d5f52/7d5f52.png) `Brown`: Gospel
 - ![#555](https://placehold.co/15x15/555/555.png) `Grey`: Other
 
-<!-- - ![#](https://placehold.co/15x15//.png) ``:  -->
-
 
 ## Usage

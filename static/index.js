@@ -15,6 +15,14 @@ smallCover.addEventListener("click", () => {
     smallCoverClicked = !smallCoverClicked;
 });
 
+smallCover.addEventListener("mouseover", function() {
+    smallCover.style.opacity = 0.8;
+});
+
+smallCover.addEventListener("mouseout", function() {
+    smallCover.style.opacity = 1.0;
+});
+
 largeCover.addEventListener("click", () => {
     if(!coverFlipped) {
         coverContent.style.transform = "rotateY(180deg)"
@@ -67,8 +75,7 @@ function coverColor(genresArr) {
     console.log(genresLength);
 
     if (genresLength == 1) {
-        // color = getColor(topGenres[0]);
-        color = "var(--pink)";
+        color = getColor(topGenres[0]);
 
         smallCover.style.backgroundColor =  color;
         coverContent.style.backgroundColor = color;
@@ -76,9 +83,7 @@ function coverColor(genresArr) {
         firstColor = getColor(topGenres[0]);
         secondColor = getColor(topGenres[1]);
 
-        // smallCover.style.background =  `linear-gradient(${firstColor}, ${secondColor})`;
-        smallCover.style.background =  "var(--purple)";
-        // coverContent.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
-        coverContent.style.background =  "var(--purple)";
+        smallCover.style.background =  `linear-gradient(${firstColor}, ${secondColor})`;
+        coverContent.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
     }
 };
