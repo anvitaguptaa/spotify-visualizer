@@ -76,6 +76,17 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.inner-box {
+  height: 94%;
+  width: 94%;
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .large-cover-front,
 .large-cover-back {
   position: absolute;

@@ -15,13 +15,16 @@ smallCover.addEventListener("click", () => {
     smallCoverClicked = !smallCoverClicked;
 });
 
+
 smallCover.addEventListener("mouseover", function() {
-    smallCover.style.opacity = 0.8;
+    smallCover.style.opacity = 0.9;
 });
+
 
 smallCover.addEventListener("mouseout", function() {
     smallCover.style.opacity = 1.0;
 });
+
 
 largeCover.addEventListener("click", () => {
     if(!coverFlipped) {
@@ -43,17 +46,17 @@ function getColor(genre) {
     } else if (genre == 'r&b') {
         color = 'var(--purple)';
     } else if (genre == 'indie') {
-        color = 'var(--light-green)';
+        color = 'var(--green)';
     } else if (genre == 'soul') {
         color = 'var(--orange)';
     } else if (genre == 'rock') {
-        color = 'var(--red)';
+        color = 'var(--crimson)';
     } else if (genre == 'country') {
-        color = 'var(--brown)';
+        color = 'var(--yellow)';
     } else if (genre == 'gospel') {
-        color = 'var(--sienna)';
+        color = 'var(--brown)';
     } else if (genre == 'ambient') {
-        color = 'var(--yellow-green)';
+        color = 'var(--teal)';
     } else if (genre == 'electronic') {
         color = 'var(--silver)';
     } else if (genre == 'classical') {
@@ -76,13 +79,11 @@ function coverColor(genresArr) {
 
     if (genresLength == 1) {
         color = getColor(topGenres[0]);
-
         smallCover.style.backgroundColor =  color;
         coverContent.style.backgroundColor = color;
     } else {
         firstColor = getColor(topGenres[0]);
         secondColor = getColor(topGenres[1]);
-
         smallCover.style.background =  `linear-gradient(${firstColor}, ${secondColor})`;
         coverContent.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
     }

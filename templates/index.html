@@ -7,7 +7,9 @@
     <div class="outer-container">
         <div class="album albumVinyl">
             <div class="cover"> 
-                <!-- COVER ART -->
+				<div class="cover-inner">
+
+				</div>
             </div>
             <div class="vinyl round">
             	<div class="label round">
@@ -23,20 +25,22 @@
         <div class="large-cover" tabIndex="0">
 			<div class="large-cover-inner">
 			  	<div class="large-cover-front">
-					<div class="tracklist">
-						<p class="top-songs"> A SIDE<br></p>
-						<div class="side">
-							{% for i in range(0, 5) %}
-								<p>{{ top_tracks[i] }}</p>
-							{%endfor%}
+					<div class="inner-box">
+						<div class="tracklist">
+							<p class="top-songs"> A SIDE<br></p>
+							<div class="side">
+								{% for i in range(0, 5) %}
+									<p>{{ top_tracks[i] }}</p>
+								{%endfor%}
+							</div>
+							<p class="top-songs"> B SIDE<br></p>
+							<div class="side">
+								{% for i in range(5, 10) %}
+									<p>{{ top_tracks[i] }}</p>
+								{% endfor %}
+							</div>
 						</div>
-						<p class="top-songs"> B SIDE<br></p>
-						<div class="side">
-							{% for i in range(5, 10) %}
-								<p>{{ top_tracks[i] }}</p>
-							{% endfor %}
-						</div>
-              		</div>
+					</div>
 				</div>
 				<div class="large-cover-back">
 				</div>
