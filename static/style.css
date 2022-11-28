@@ -35,6 +35,17 @@ body {
     z-index: 2; 
 }
 
+.cover-inner .advisory-img {
+  padding-top: 66.5%;
+  padding-left: 64%;
+  justify-self: right;
+  justify-content: right;
+
+
+  height: 35%;
+  width: 35%;
+}
+
 @media (min-width: 320px) {
   .large-cover {
     margin-left: auto;
@@ -75,6 +86,7 @@ body {
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 
 .inner-box {
   height: 94%;
@@ -118,6 +130,17 @@ body {
   align-items: center;
 
   transform: rotateY(180deg);
+}
+
+.large-cover-back-inner .advisory-img {
+  padding-top: 165%;
+  padding-left: 105%;
+  justify-self: right;
+  justify-content: right;
+
+
+  height: 50%;
+  width: 50%;
 }
 
 .tracklist {
