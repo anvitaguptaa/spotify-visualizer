@@ -30,12 +30,20 @@ body {
 }
 
 .cover {
-    width: 450px;
-    height: 450px;
-    z-index: 2; 
+  width: 450px;
+  height: 450px;
+  z-index: 2; 
 }
 
-.cover-inner .advisory-img {
+.sketch {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 95%;
+  width: 95%;
+}
+
+/* .cover-inner .advisory-img {
   padding-top: 66.5%;
   padding-left: 64%;
   justify-self: right;
@@ -44,7 +52,7 @@ body {
 
   height: 35%;
   width: 35%;
-}
+} */
 
 @media (min-width: 320px) {
   .large-cover {
@@ -131,7 +139,7 @@ body {
 
   transform: rotateY(180deg);
 }
-
+/* 
 .large-cover-back-inner .advisory-img {
   padding-top: 165%;
   padding-left: 105%;
@@ -141,7 +149,7 @@ body {
 
   height: 50%;
   width: 50%;
-}
+} */
 
 .tracklist {
   text-align: center;
