@@ -17,7 +17,7 @@ smallCover.addEventListener("click", () => {
 
 
 smallCover.addEventListener("mouseover", function() {
-    smallCover.style.opacity = 0.9;
+    smallCover.style.opacity = 0.95;
 });
 
 

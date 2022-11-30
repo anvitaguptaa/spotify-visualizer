@@ -41,6 +41,79 @@ body {
   margin-right: auto;
   height: 95%;
   width: 95%;
+  padding-top: 9%;
+  position: relative;
+  z-index: 1;
+}
+
+.circle1 {
+  margin-top: -63.7%;
+  margin-left: 21%;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(121, 47, 47);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.shadow1 {
+  margin-top: -57%;
+  margin-left: 27.5%;
+  height: 15px;
+  width: 40px;
+  background-color: rgb(121, 47, 47);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle2 {
+  margin-top: -51%;
+  margin-left: 25.5%;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(121, 47, 47);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.shadow2 {
+  margin-top: -44.4%;
+  margin-left: 32%;
+  height: 17px;
+  width: 43px;
+  background-color: rgb(121, 47, 47);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle3 {
+  margin-top: -56%;
+  margin-left: 40%;
+  height: 30px;
+  width: 40px;
+  background-color: rgb(121, 47, 47);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle4 {
+  margin-top: -53.5%;
+  margin-left: 55.2%;
+  height: 44px;
+  width: 43px;
+  background-color: rgb(121, 47, 47);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle5 {
+  margin-top: -64%;
+  margin-left: 67.2%;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(121, 47, 47);
+  border-radius: 50%;
+  position: absolute;
 }
 
 /* .cover-inner .advisory-img {
@@ -121,35 +194,35 @@ body {
   /* background:#555; */
   /* background-color: color-mix(in srgb, var(--sky-blue) 50%, var(--dark-blue));   */
   color: white;
-  z-index: 2;
+  /* z-index: 2; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .large-cover-back {
+  background: transparent;
   /* background:#555; */
   /* background-color: color-mix(in srgb, var(--sky-blue) 50%, var(--dark-blue));   */
   color: white;
   /* transform: rotateY(180deg); */
-  z-index: 1;
+  /* z-index: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
 
   transform: rotateY(180deg);
 }
-/* 
-.large-cover-back-inner .advisory-img {
-  padding-top: 165%;
-  padding-left: 105%;
-  justify-self: right;
-  justify-content: right;
 
-
-  height: 50%;
-  width: 50%;
-} */
+.sketch-back {
+  /* display: block; */
+  margin-left: auto;
+  margin-right: auto;
+  height: 95%;
+  width: 95%;
+  padding-top: 5%;
+  /* z-index: 10px; */
+}
 
 .tracklist {
   text-align: center;
