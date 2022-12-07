@@ -16,7 +16,7 @@
   --dark-blue: #181c3d;/* Rap */
   --sky-blue: #628aca; /* Pop */
   --teal: #6c929e; /* Ambient */
-  --green: #9aae7ceb;/* Indie */
+  --green: #9aae7cf4;/* Indie */
   --yellow: #cabf78ee; /* Country */
   --orange: #db9f66f0;/* Soul */
   --red: rgba(135, 26, 26, 0.9); /* Reggae */
@@ -149,6 +149,11 @@ body {
   }
 }
 
+p {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .large-cover {
   background-color: transparent;
   width: 900px;
@@ -164,6 +169,7 @@ body {
   transition: transform 0.6s;
   /* transform: rotateY(180deg); */
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d();
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -205,13 +211,13 @@ body {
   /* background:#555; */
   /* background-color: color-mix(in srgb, var(--sky-blue) 50%, var(--dark-blue));   */
   color: white;
-  /* transform: rotateY(180deg); */
-  /* z-index: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
 
+  /* -webkit-transform: rotateY(180deg); */
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .sketch-back {

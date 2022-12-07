@@ -19,6 +19,10 @@ SCOPE = '''user-top-read user-read-playback-state user-read-recently-played
            user-follow-read playlist-read-private'''
 URL = 'https://api.spotify.com/v1/'
 
+genre_dict = {0 : 'rap', 1 : 'pop', 2 : 'r&b', 3 : 'indie', 4 : 'soul',
+              5 : 'rock', 6 : 'country', 7 : 'gospel', 8 : 'ambient',
+              9 : 'electronic', 10 : 'classical', 11 : 'jazz', 12 : 'reggae'}
+
 
 def oauth_token():
     token = utils.prompt_for_user_token(USERNAME, SCOPE, CLIENT_ID,
@@ -51,7 +55,7 @@ class Client:
 
 
     def parse_track_info(self):
-        top_tracks = self.client.current_user_top_tracks(limit=10, time_range='long_term')
+        top_tracks = self.client.current_user_top_tracks(limit=10, time_range='short_term')
 
         for track in top_tracks['items']:
             self.top_track_info['track_arr'].append(track['name'].upper() + ' - ' + track['artists'][0]['name'].upper())
@@ -80,38 +84,16 @@ class Client:
 
 
     def genre_counter(self, group):
-        if group == 0:
-            self.genre_matches['rap'] += 1
-        elif group == 1:
-            self.genre_matches['pop'] += 1
-        elif group == 2:
-            self.genre_matches['r&b'] += 1
-        elif group == 3:
-            self.genre_matches['indie'] += 1
-        elif group == 4:
-            self.genre_matches['soul'] += 1
-        elif group == 5:
-            self.genre_matches['rock'] += 1
-        elif group == 6:
-            self.genre_matches['country'] += 1
-        elif group == 7:
-            self.genre_matches['gospel'] += 1
-        elif group == 8:
-            self.genre_matches['ambient'] += 1
-        elif group == 9:
-            self.genre_matches['electronic'] += 1
-        elif group == 10:
-            self.genre_matches['classical'] += 1
-        elif group == 10:
-            self.genre_matches['jazz'] += 1
-        elif group == 11:
-            self.genre_matches['reggae'] += 1
+        if (group >= 0) and (group <= 12):
+            self.genre_matches[genre_dict[group]] += 1
         else:
             self.genre_matches['other'] += 1
 
 
+    #  Takes user's top artist and determines the genre
+    # TODO : Change back to 0
     def get_top_genres(self):
-        artist_genres = str(list(self.top_artist_info.values())[0])
+        artist_genres = str(list(self.top_artist_info.values())[6])
         result = re.findall(self.genres_regex, artist_genres)
 
         for matches in result:
@@ -125,7 +107,7 @@ class Client:
         # TODO: SHOULD I RETURN SINGLE OR MULTIPLE MAX KEYS
         max_keys = [key for key, value in self.genre_matches.items() 
                     if value == max(self.genre_matches.values())]
-        print(max_keys)
+        # print(max_keys)
         return max_keys
         
 
@@ -135,7 +117,9 @@ if __name__ == "__main__":
     client.parse_features_info()
     top_tracks = client.top_track_info['track_arr']
     client.parse_artists_info()
+    # print(client.top_artist_info)
     top_genres = client.get_top_genres()
+    # print(client.genre_matches)
 
     # print(client.features_info)
 

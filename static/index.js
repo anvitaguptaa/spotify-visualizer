@@ -29,8 +29,10 @@ smallCover.addEventListener("mouseout", function() {
 largeCover.addEventListener("click", () => {
     if(!coverFlipped) {
         coverContent.style.transform = "rotateY(180deg)"
+        coverContent.style.webkitTransform = "rotateY(180deg)"
     }   else {
         coverContent.style.transform = "rotateY(0deg)"
+        coverContent.style.webkitTransform = "rotateY(0deg)"
     }
     coverFlipped = !coverFlipped;
 });
