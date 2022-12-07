@@ -37,6 +37,7 @@ largeCover.addEventListener("click", () => {
     coverFlipped = !coverFlipped;
 });
 
+
 var genre_dict = {'rap' : 'var(--dark-blue)', 
                   'pop' : 'var(--sky-blue)',
                   'r&b' : 'var(--purple)',
@@ -51,6 +52,7 @@ var genre_dict = {'rap' : 'var(--dark-blue)',
                   'jazz' : 'var(--pink)', 
                   'other' : 'var(--grey)'
                 };
+
 
 function getColor(genre) {
     console.log("GENRE: ", genre);
@@ -72,8 +74,8 @@ function coverColor(genresArr) {
         smallCover.style.backgroundColor =  color;
         coverContent.style.backgroundColor = color;
     } else {
-        firstColor = getColor(topGenres[0]);
-        secondColor = getColor(topGenres[1]);
+        firstColor = getColor(topGenres[1]);
+        secondColor = getColor(topGenres[0]);
         smallCover.style.background =  `linear-gradient(${firstColor}, ${secondColor})`;
         coverContent.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
     }

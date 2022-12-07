@@ -93,7 +93,7 @@ class Client:
     #  Takes user's top artist and determines the genre
     # TODO : Change back to 0
     def get_top_genres(self):
-        artist_genres = str(list(self.top_artist_info.values())[6])
+        artist_genres = str(list(self.top_artist_info.values())[8])
         result = re.findall(self.genres_regex, artist_genres)
 
         for matches in result:
@@ -104,10 +104,8 @@ class Client:
                 else:
                     group += 1
 
-        # TODO: SHOULD I RETURN SINGLE OR MULTIPLE MAX KEYS
         max_keys = [key for key, value in self.genre_matches.items() 
                     if value == max(self.genre_matches.values())]
-        # print(max_keys)
         return max_keys
         
 
@@ -138,5 +136,6 @@ def hello():
     client.parse_artists_info()
     
     top_genres = list(client.get_top_genres())
+    print(client.genre_matches)
 
     return render_template('index.html', name=name, top_tracks=top_tracks, top_genres=top_genres)
