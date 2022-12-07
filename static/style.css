@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Raleway:wght@700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Raleway:wght@600&display=swap');
 
 @media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
 @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
@@ -26,6 +27,7 @@
 
 body {
   background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -218,10 +220,9 @@ p {
 .inner-box {
   height: 94%;
   width: 94%;
-  outline-style: auto;
-  outline-width: 3px;
-  border-color: blue;
-  /* -webkit-border-before-color: white; */
+  outline-style:solid;
+  outline-width: 3.5px;
+  outline-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -402,12 +403,12 @@ p {
 }
 
 .top-songs {
-  font-size: 180%;
-  margin-bottom: 1.5rem;
+  font-size: 175%;
+  margin-bottom: 1rem;
 }
 
 .side {
-  font-size: 85%;
+  font-size: 90%;
   margin-bottom: 3rem;
 }
 
@@ -421,7 +422,8 @@ p {
 .album,
 .album .vinyl {
   width: 450px;
-  height: 450px;
+  height: 449px;
+  margin-top: 1px;
 }
 
 .album > div,
