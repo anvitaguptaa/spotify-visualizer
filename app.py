@@ -65,7 +65,7 @@ class Client:
     def parse_features_info(self):        
         for id in self.top_track_info['id_arr']:
             features = self.client.audio_features(id)
-            
+
             for key, value in features[0].items():
                 if not key in self.features_info: 
                     break
@@ -90,22 +90,24 @@ class Client:
             self.genre_matches['other'] += 1
 
 
-    #  Takes user's top artist and determines the genre
+    #  Takes user's top artists and determines their top listened-to genre from artist info
     # TODO : Change back to 0
     def get_top_genres(self):
-        artist_genres = str(list(self.top_artist_info.values())[6])
-        result = re.findall(self.genres_regex, artist_genres)
+        for item in self.top_artist_info.values():
+            artist_genres = str(list(item))
+            result = re.findall(self.genres_regex, artist_genres)
 
-        for matches in result:
-            group = 0
-            for match in matches:
-                if match:
-                    self.genre_counter(group)
-                else:
-                    group += 1
+            for matches in result:
+                group = 0
+                for match in matches:
+                    if match:
+                        self.genre_counter(group)
+                    else:
+                        group += 1
 
         max_keys = [key for key, value in self.genre_matches.items() 
                     if value == max(self.genre_matches.values())]
+        print(self.genre_matches)
         return max_keys
         
 
