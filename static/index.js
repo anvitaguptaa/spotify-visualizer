@@ -37,37 +37,25 @@ largeCover.addEventListener("click", () => {
     coverFlipped = !coverFlipped;
 });
 
+var genre_dict = {'rap' : 'var(--dark-blue)', 
+                  'pop' : 'var(--sky-blue)',
+                  'r&b' : 'var(--purple)',
+                  'indie' : 'var(--green)',
+                  'soul' : 'var(--orange)',
+                  'rock' : 'var(--crimson)', 
+                  'country' : 'var(--yellow)', 
+                  'gospel' : 'var(--brown)', 
+                  'ambient' : 'var(--teal)', 
+                  'electronic' : 'var(--silver)', 
+                  'classical' : 'var(--lavender)', 
+                  'jazz' : 'var(--pink)', 
+                  'other' : 'var(--grey)'
+                };
 
 function getColor(genre) {
     console.log("GENRE: ", genre);
-    var color = '';
-    if (genre == 'rap') {
-        color = 'var(--dark-blue)';
-    } else if (genre == 'pop') {
-        color = 'var(--sky-blue)';
-    } else if (genre == 'r&b') {
-        color = 'var(--purple)';
-    } else if (genre == 'indie') {
-        color = 'var(--green)';
-    } else if (genre == 'soul') {
-        color = 'var(--orange)';
-    } else if (genre == 'rock') {
-        color = 'var(--crimson)';
-    } else if (genre == 'country') {
-        color = 'var(--yellow)';
-    } else if (genre == 'gospel') {
-        color = 'var(--brown)';
-    } else if (genre == 'ambient') {
-        color = 'var(--teal)';
-    } else if (genre == 'electronic') {
-        color = 'var(--silver)';
-    } else if (genre == 'classical') {
-        color = 'var(--lavender)';
-    } else if (genre == 'jazz') {
-        color = 'var(--pink)';
-    } else if (genre == 'other') {
-        color = 'var(--grey)';
-    }
+    var color = genre_dict[genre];
+    
     return color;
 };
 
