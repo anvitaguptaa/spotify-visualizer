@@ -8,16 +8,18 @@ let smallCoverClicked = false;
 
 smallCover.addEventListener("click", () => {
     if(!smallCoverClicked) {
+        vinyl.style.webkitTransform = "translate(450px, 0) rotate(0deg)"
         vinyl.style.transform = "translate(450px, 0) rotate(0deg)"
     }   else {
         vinyl.style.transform = "translate(50px, 0) rotate(-180deg)"
+        vinyl.style.webkitTransform = "translate(50px, 0) rotate(-180deg)"
     }
     smallCoverClicked = !smallCoverClicked;
 });
 
 
 smallCover.addEventListener("mouseover", function() {
-    smallCover.style.opacity = 0.95;
+    smallCover.style.opacity = 0.97;
 });
 
 
