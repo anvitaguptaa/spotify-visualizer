@@ -93,7 +93,7 @@ class Client:
     #  Takes user's top artist and determines the genre
     # TODO : Change back to 0
     def get_top_genres(self):
-        artist_genres = str(list(self.top_artist_info.values())[8])
+        artist_genres = str(list(self.top_artist_info.values())[6])
         result = re.findall(self.genres_regex, artist_genres)
 
         for matches in result:
