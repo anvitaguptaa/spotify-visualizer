@@ -14,9 +14,9 @@ app = Flask(__name__)
 CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
 CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
 REDIRECT_URI = os.getenv('SPOTIPY_REDIRECT_URI')
-USERNAME = 'av_pr'
-SCOPE = '''user-top-read user-read-playback-state user-read-recently-played 
-           user-follow-read playlist-read-private'''
+USERNAME = ''
+SCOPE = '''user-top-read user-read-recently-played 
+           user-follow-read'''
 URL = 'https://api.spotify.com/v1/'
 
 genre_dict = {0 : 'rap', 1 : 'pop', 2 : 'r&b', 3 : 'indie', 4 : 'soul',
@@ -26,7 +26,7 @@ genre_dict = {0 : 'rap', 1 : 'pop', 2 : 'r&b', 3 : 'indie', 4 : 'soul',
 
 def oauth_token():
     token = utils.prompt_for_user_token(USERNAME, SCOPE, CLIENT_ID,
-                                       CLIENT_SECRET, REDIRECT_URI)
+                                       CLIENT_SECRET, REDIRECT_URI, show_dialog=True)
 
     return token
 
@@ -62,6 +62,7 @@ class Client:
             self.top_track_info['id_arr'].append(track['id'])
             
 
+    # Gets the averages of the audio features for a user's top 10 tracks
     def parse_features_info(self):        
         for id in self.top_track_info['id_arr']:
             features = self.client.audio_features(id)
