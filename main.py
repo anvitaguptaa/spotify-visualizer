@@ -128,6 +128,11 @@ class Client:
 #   and prompts you to create your personal one which takes you to login etc.
 @app.route('/')
 def hello():
+    return render_template('startup.html')
+
+
+@app.route('/vinylfied')
+def vinyl():
     client = Client()
     name = client.name.upper()
 
@@ -141,4 +146,4 @@ def hello():
     top_genres = list(client.get_top_genres())
     print(client.genre_matches)
 
-    return render_template('index.html', name=name, top_tracks=top_tracks, top_genres=top_genres)
+    return render_template('main.html', name=name, top_tracks=top_tracks, top_genres=top_genres)
