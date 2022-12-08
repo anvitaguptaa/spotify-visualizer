@@ -112,14 +112,14 @@ class Client:
         return max_keys
         
 
-if __name__ == "__main__":
-    client = Client()
-    client.parse_track_info()
-    client.parse_features_info()
-    top_tracks = client.top_track_info['track_arr']
-    client.parse_artists_info()
-    # print(client.top_artist_info)
-    top_genres = client.get_top_genres()
+# if __name__ == "__main__":
+#     client = Client()
+#     client.parse_track_info()
+#     client.parse_features_info()
+#     top_tracks = client.top_track_info['track_arr']
+#     client.parse_artists_info()
+#     # print(client.top_artist_info)
+#     top_genres = client.get_top_genres()
     # print(client.genre_matches)
 
     # print(client.features_info)
