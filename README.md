@@ -5,17 +5,28 @@ http://vinylfy.herokuapp.com/.
 Vinylfy is a web application which generates a customized vinyl cover for users, based on their Spotify listening preferences within the past month. 
 
 This application takes into account a user's top artists, tracks, and calculates the averages of a user's top 10 track features including:
-- **Danceability**: Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
-- **Energy**: Energy represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
-- **Key**: The key the track is in. Integers map to pitches using standard Pitch Class notation.
-- **Loudness**: The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude).
-- **Mode**: Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived.
-- **Speechiness**: Speechiness detects the presence of spoken words in a track. The more exclusively speech-like recordings may include talk shows, audio books, poetry, etc.
-- **Acousticness**: A confidence measure of whether the track is acoustic.
-- **Instrumentalness**: Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". 
-- **Liveness**: Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live.
-- **Valence**: A measure describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
-- **Tempo**: The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+
+**Danceability**: Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
+
+**Energy**: Energy represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
+
+**Key**: The key the track is in. Integers map to pitches using standard Pitch Class notation.
+
+**Loudness**: The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude).
+
+**Mode**: Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived.
+
+**Speechiness**: Speechiness detects the presence of spoken words in a track. The more exclusively speech-like recordings may include talk shows, audio books, poetry, etc.
+
+**Acousticness**: A confidence measure of whether the track is acoustic.
+
+**Instrumentalness**: Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". 
+
+**Liveness**: Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live.
+
+**Valence**: A measure describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
+
+**Tempo**: The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
 
 ## Customization Guide
 
