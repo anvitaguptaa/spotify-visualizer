@@ -54,8 +54,21 @@ The following colour-genre assignments were developed:
 
 If a user has multiple top genres, a gradient colour scheme will be applied utilizing colours from the tied genres.
 
-### 2. Vinyl Front Design Colours
+### 2. Vinyl Cover Design Colours
+Developed an algorithm... TODO
 
+CIELAB Color Space: 
+
+
+https://escholarship.org/uc/item/7px9h0gg
+
+- Higher pitch = lighter colours
+- Slow Tempo + Minor = Unsaturated, dark, blue, green
+- Slow Tempo + Major = Unsaturated, light, blue, green/red
+- Med Tempo + Minor = Unsaturated, light/dark, blue, green/red
+- Med Tempo + Major = Saturated, light, yellow/blue, red/green
+- Fast Tempo + Minor = Saturated, light, blue/yellow, green/red=
+- Fast Tempo + Major = Saturated, light, yellow, red/green
 
 ### 3. Vinyl Disk Colour
 

@@ -3,6 +3,9 @@ const vinyl = document.querySelector(".vinyl");
 const largeCover = document.querySelector(".large-cover");
 const coverContent = document.querySelector(".large-cover-inner");
 const innerBox = document.querySelector(".inner-box");
+const shapes = document.querySelectorAll(".shapes");
+// let shapes = document.getElementsByClassName('shapes');
+// console.log(shapes);
 let coverFlipped = false;
 let smallCoverClicked = false;
 
@@ -102,10 +105,17 @@ function tracklistOutline(loudness) {
 };
 
 
+function colorShapes() {
+    for (let i = 0; i < shapes.length; i++) {
+        shapes[i].style.background = '#000';
+    }
+};
+
 // Big function to run all customization
 function customize(genresArr, features) {
     var loudness = features['loudness'];
     console.log(loudness);
     coverColor(genresArr);
     tracklistOutline(loudness);
+    colorShapes();
 };
