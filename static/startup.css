@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Raleway:wght@600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 body{
     background:#eee;
-    color: #000;
+    color: rgb(18, 18, 18);
 }
 
 h1 {
@@ -22,7 +23,7 @@ h2 {
 
 @media (min-width: 320px) {
     #turntable {
-        margin-top:50%;
+        margin-top: 48%;
         left: 2%;
     }
 
