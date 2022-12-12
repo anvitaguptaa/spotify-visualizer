@@ -18,6 +18,7 @@ USERNAME = ''
 SCOPE = '''user-top-read user-read-recently-played 
            user-follow-read'''
 URL = 'https://api.spotify.com/v1/'
+TOP_LIMIT = 10
 
 genre_dict = {0 : 'rap', 1 : 'pop', 2 : 'r&b', 3 : 'indie', 4 : 'soul',
               5 : 'rock', 6 : 'country', 7 : 'gospel', 8 : 'ambient',
@@ -26,7 +27,7 @@ genre_dict = {0 : 'rap', 1 : 'pop', 2 : 'r&b', 3 : 'indie', 4 : 'soul',
 
 def oauth_token():
     token = utils.prompt_for_user_token(USERNAME, SCOPE, CLIENT_ID,
-                                       CLIENT_SECRET, REDIRECT_URI, show_dialog=True)
+                                       CLIENT_SECRET, REDIRECT_URI)
 
     return token
 
@@ -55,7 +56,7 @@ class Client:
 
 
     def parse_track_info(self):
-        top_tracks = self.client.current_user_top_tracks(limit=10, time_range='short_term')
+        top_tracks = self.client.current_user_top_tracks(limit=TOP_LIMIT, time_range='short_term')
 
         for track in top_tracks['items']:
             self.top_track_info['track_arr'].append(track['name'].upper() + ' - ' + track['artists'][0]['name'].upper())
@@ -74,11 +75,13 @@ class Client:
                 self.features_info[key] += value
 
         for feature in self.features_info.keys():
-            self.features_info[feature] /= 10
+            self.features_info[feature] /= TOP_LIMIT
+        
+        # print(self.features_info)
 
 
     def parse_artists_info(self):
-        top_artists = self.client.current_user_top_artists(limit=10, time_range='long_term')
+        top_artists = self.client.current_user_top_artists(limit=TOP_LIMIT, time_range='long_term')
 
         for artist in top_artists['items']:
             self.top_artist_info[artist['name']] = artist['genres']
@@ -138,12 +141,11 @@ def vinyl():
 
     client.parse_track_info()
     client.parse_features_info()
+    client.parse_artists_info()
 
     top_tracks = client.top_track_info['track_arr']
-
-    client.parse_artists_info()
-    
     top_genres = list(client.get_top_genres())
-    print(client.genre_matches)
+    features = client.features_info
+    # print(client.genre_matches)
 
-    return render_template('main.html', name=name, top_tracks=top_tracks, top_genres=top_genres)
+    return render_template('main.html', name=name, top_tracks=top_tracks, top_genres=top_genres, features=features)

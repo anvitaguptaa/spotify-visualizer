@@ -37,7 +37,6 @@ Taking inspiration from research and genre-visualization data from:
 - [Visualising Music The Problems With Genre Classification](https://mastersofmedia.hum.uva.nl/blog/2011/04/26/visualising-music-the-problems-with-genre-classification/#:~:text=Rock%20is%20red%2C%20metal%20is,Light%20grey%20vertices%20are%20unclassified).
 - 
 
-
 The following colour-genre assignments were developed:
 - ![#1b1121](https://placehold.co/15x15/1b1121/1b1121.png) `Purple`: R&B
 - ![#977fa5](https://placehold.co/15x15/977fa5/977fa5.png) `Lavender`: Classical, Opera, Piano
@@ -53,15 +52,21 @@ The following colour-genre assignments were developed:
 - ![#7d5f52](https://placehold.co/15x15/7d5f52/7d5f52.png) `Brown`: Gospel
 - ![#555](https://placehold.co/15x15/555/555.png) `Grey`: Other
 
+If a user has multiple top genres, a gradient colour scheme will be applied utilizing colours from the tied genres.
 
 ### 2. Vinyl Front Design Colours
 
 
-### 3. Vinyl Tracklist Outline
+### 3. Vinyl Disk Colour
 
-Outline Styles:
-- Solid
-- Dashed
-- Dotted
-- Double
+
+### 4. Vinyl Tracklist Outline
+
+The outline of a user's tracklist is generated based on the average loudness of their top 10 tracks.
+
+Lines are generated with the following styles, ranging from least loud (-60 dB) to most loud (0 dB): 
+1. **Dotted**: -60 dB to -46 dB
+2. **Dashed**: -45 dB to -31 dB
+3. **Solid**: -30 dB to -16 dB
+4. **Double**: -15 dB to 0 dB
 

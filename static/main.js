@@ -2,6 +2,7 @@ const smallCover = document.querySelector(".cover");
 const vinyl = document.querySelector(".vinyl");
 const largeCover = document.querySelector(".large-cover");
 const coverContent = document.querySelector(".large-cover-inner");
+const innerBox = document.querySelector(".inner-box");
 let coverFlipped = false;
 let smallCoverClicked = false;
 
@@ -65,20 +66,42 @@ function getColor(genre) {
 
 
 function coverColor(genresArr) {
-    var topGenres = genresArr;
-    console.log(topGenres);
-
-    let genresLength = topGenres.length;
+    let genresLength = genresArr.length;
     console.log(genresLength);
 
     if (genresLength == 1) {
-        color = getColor(topGenres[0]);
+        color = getColor(genresArr[0]);
         smallCover.style.backgroundColor =  color;
         coverContent.style.backgroundColor = color;
     } else {
-        firstColor = getColor(topGenres[1]);
-        secondColor = getColor(topGenres[0]);
+        firstColor = getColor(genresArr[1]);
+        secondColor = getColor(genresArr[0]);
         smallCover.style.background =  `linear-gradient(${firstColor}, ${secondColor})`;
         coverContent.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
     }
+};
+
+function inRange(x, min, max) {
+    return ((x-min)*(x-max) <= 0);
+};
+
+function tracklistOutline(loudness) {
+    if (inRange(loudness, -60, -46)) {
+        innerBox.style.outline = 'dotted';
+    } else if (inRange(loudness, -45, -31)) {
+        innerBox.style.outline = 'dashed';
+    } else if (inRange(loudness, -30, -16)) {
+        innerBox.style.outline = 'solid';
+    } else {
+        innerBox.style.outline = 'double';
+    }
+};
+
+// Big function to run all customization
+function customize(genresArr, features) {
+    // var loudness = features['loudness'];
+    var loudness = -15;
+    console.log(loudness);
+    coverColor(genresArr);
+    tracklistOutline(loudness);
 };
