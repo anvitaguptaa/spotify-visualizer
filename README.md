@@ -65,6 +65,7 @@ If a user has multiple top genres, a gradient colour scheme will be applied util
 The outline of a user's tracklist is generated based on the average loudness of their top 10 tracks.
 
 Lines are generated with the following styles, ranging from least loud (-60 dB) to most loud (0 dB): 
+
 1. **Dotted**: -60 dB to -46 dB
 2. **Dashed**: -45 dB to -31 dB
 3. **Solid**: -30 dB to -16 dB

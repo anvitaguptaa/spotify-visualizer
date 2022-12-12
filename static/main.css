@@ -219,9 +219,6 @@ p {
 .inner-box {
   height: 94%;
   width: 94%;
-  /* outline-style:dashed; */
-  outline-width: 3.5px;
-  outline-color: white;
   display: flex;
   justify-content: center;
   align-items: center;

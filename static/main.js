@@ -40,7 +40,7 @@ largeCover.addEventListener("click", () => {
     coverFlipped = !coverFlipped;
 });
 
-
+// Abstract this
 var genre_dict = {'rap' : 'var(--dark-blue)', 
                   'pop' : 'var(--sky-blue)',
                   'r&b' : 'var(--purple)',
@@ -81,26 +81,30 @@ function coverColor(genresArr) {
     }
 };
 
+
 function inRange(x, min, max) {
     return ((x-min)*(x-max) <= 0);
 };
 
+
 function tracklistOutline(loudness) {
+    var line = '';
     if (inRange(loudness, -60, -46)) {
-        innerBox.style.outline = 'dotted';
+        line = 'dotted';
     } else if (inRange(loudness, -45, -31)) {
-        innerBox.style.outline = 'dashed';
+        line = 'dashed';
     } else if (inRange(loudness, -30, -16)) {
-        innerBox.style.outline = 'solid';
+        line = 'solid';
     } else {
-        innerBox.style.outline = 'double';
+        line = 'double';
     }
+    innerBox.style.outline = line + ' 3.5px white';
 };
+
 
 // Big function to run all customization
 function customize(genresArr, features) {
-    // var loudness = features['loudness'];
-    var loudness = -15;
+    var loudness = features['loudness'];
     console.log(loudness);
     coverColor(genresArr);
     tracklistOutline(loudness);
