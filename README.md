@@ -1,43 +1,46 @@
-# Vinyl-fy
-http://vinylfy.herokuapp.com/.
+# **Vinylfy**
+Vinylfy is a web application which generates a customized vinyl design for users, based on their Spotify listening preferences within the past 4 weeks. 
 
-## Introduction
-Vinylfy is a web application which generates a customized vinyl cover for users, based on their Spotify listening preferences within the past month. 
+The application can be accessed from http://vinylfy.herokuapp.com/.
 
-This application takes into account a user's top artists, tracks, and calculates the averages of a user's top 10 track features including:
+## **User Data Collection**
 
-- **Danceability**: Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
+### **Top Tracks & Artists**
+Vinylfy uses the [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to obtain a user's top artists or tracks from the past 4 weeks, based on calculated affinity. 
 
-- **Energy**: Energy represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
+Affinity is a measure of the expected preference a user has for a particular track or artist. It is based on user behavior, including play history, but does not include actions made while in incognito mode. Light or infrequent users of Spotify may not have sufficient play history to generate a full affinity data set.
+
+### **Audio Features**
+Each audio track in Spotify contains audio feature information for that track. Vinylfy calculates the feature averages for a user's top 10 tracks, including: 
+
+- **Danceability**: How suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
+
+- **Energy**: Measure of intensity and activity. For example, death metal has high energy, while a Bach prelude scores low on the scale. Features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
 
 - **Key**: The key the track is in. Integers map to pitches using standard Pitch Class notation.
 
-- **Loudness**: The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude).
+- **Loudness**: Loudness of a track in decibels (dB). Values are averaged across the entire track and are useful for comparing relative loudness of tracks. 
 
-- **Mode**: Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived.
+- **Mode**: The modality (major or minor) of a track, the type of scale from which its melodic content is derived.
 
-- **Speechiness**: Speechiness detects the presence of spoken words in a track. The more exclusively speech-like recordings may include talk shows, audio books, poetry, etc.
+- **Speechiness**: The presence of spoken words in a track.
 
 - **Acousticness**: A confidence measure of whether the track is acoustic.
 
-- **Instrumentalness**: Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". 
+- **Instrumentalness**: Whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. 
 
 - **Liveness**: Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live.
 
-- **Valence**: A measure describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
+- **Valence**: The musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
 
-- **Tempo**: The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+- **Tempo**: Overall estimated tempo of a track in beats per minute (BPM).
 
-## Customization Guide
-
-### 1. Vinyl Cover Colour
+## **Design**
+### **Vinyl Cover Colour**
 The colour of a user's vinyl cover is generated based on their most listened to genre, calculated from a user's top 10 artists.
 
-Taking inspiration from research and genre-visualization data from:
-- [Visualising Music The Problems With Genre Classification](https://mastersofmedia.hum.uva.nl/blog/2011/04/26/visualising-music-the-problems-with-genre-classification/#:~:text=Rock%20is%20red%2C%20metal%20is,Light%20grey%20vertices%20are%20unclassified).
-- 
-
-The following colour-genre assignments were developed:
+Inspired by reasearch and genre-visualization data from
+[Visualising Music The Problems With Genre Classification](https://mastersofmedia.hum.uva.nl/blog/2011/04/26/visualising-music-the-problems-with-genre-classification/#:~:text=Rock%20is%20red%2C%20metal%20is,Light%20grey%20vertices%20are%20unclassified), the following colour-genre assignments were developed:
 - ![#1b1121](https://placehold.co/15x15/1b1121/1b1121.png) `Purple`: R&B
 - ![#977fa5](https://placehold.co/15x15/977fa5/977fa5.png) `Lavender`: Classical, Opera, Piano
 - ![#c29ba6](https://placehold.co/15x15/c29ba6/c29ba6.png) `Pink`: Jazz, Blues, Bossanova, 
@@ -52,28 +55,34 @@ The following colour-genre assignments were developed:
 - ![#7d5f52](https://placehold.co/15x15/7d5f52/7d5f52.png) `Brown`: Gospel
 - ![#555](https://placehold.co/15x15/555/555.png) `Grey`: Other
 
-If a user has multiple top genres, a gradient colour scheme will be applied utilizing colours from the tied genres.
+If a user has multiple top genres, a gradient colour scheme will be applied utilizing colour-assignments from the tied genres.
 
-### 2. Vinyl Cover Design Colours
-Developed an algorithm... TODO
+### **Vinyl Cover Design Colours**
+An algorithm was developed to generate a personalized colour on the 3-dimensional [CIELAB Colour Space](https://en.wikipedia.org/wiki/CIELAB_color_space), using features such as tempo, mode, and key.
 
-CIELAB Color Space: 
+Based on [research from UC Berkely](https://escholarship.org/uc/item/7px9h0gg), the following colour-genre associations were discovered:
+![](./static/imgs/docs/major-minor.jpeg)
+![](./static/imgs/docs/emotional-ratings.jpeg)
+
+To summarize, it is shown that:
+
+| Tempo  | Mode  | Saturation  | Light | Blue/Yellow | Green/Red |
+|--------|-------|-------------|-------|-------------|-----------|
+| Slow   | Minor | Unsaturated | Dark  | Blue        | Green     |
+| Slow   | Major | Unsaturated | Light | Blue        | Both      |
+| Medium | Minor | Unsaturated | Both  | Blue        | Both      |
+| Medium | Major | Saturated   | Light | Both        | Both      |
+| Fast   | Minor | Saturated   | Light | Both        | Both      |
+| Fast   | Major | Saturated   | Light | Yellow      | Both      |
+
+As well as
+- *Higher pitch = lighter colours*
 
 
-https://escholarship.org/uc/item/7px9h0gg
-
-- Higher pitch = lighter colours
-- Slow Tempo + Minor = Unsaturated, dark, blue, green
-- Slow Tempo + Major = Unsaturated, light, blue, green/red
-- Med Tempo + Minor = Unsaturated, light/dark, blue, green/red
-- Med Tempo + Major = Saturated, light, yellow/blue, red/green
-- Fast Tempo + Minor = Saturated, light, blue/yellow, green/red=
-- Fast Tempo + Major = Saturated, light, yellow, red/green
-
-### 3. Vinyl Disk Colour
+### **Vinyl Disk Colour**
 
 
-### 4. Vinyl Tracklist Outline
+### **Vinyl Tracklist Outline**
 
 The outline of a user's tracklist is generated based on the average loudness of their top 10 tracks.
 
