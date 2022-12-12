@@ -3,14 +3,17 @@ Vinylfy is a web application which generates a customized vinyl design for users
 
 The application can be accessed from http://vinylfy.herokuapp.com/.
 
-## **User Data Collection**
+## **User Data**
+---
 
 ### **Top Tracks & Artists**
+---
 Vinylfy uses the [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to obtain a user's top artists or tracks from the past 4 weeks, based on calculated affinity. 
 
 Affinity is a measure of the expected preference a user has for a particular track or artist. It is based on user behavior, including play history, but does not include actions made while in incognito mode. Light or infrequent users of Spotify may not have sufficient play history to generate a full affinity data set.
 
 ### **Audio Features**
+---
 Each audio track in Spotify contains audio feature information for that track. Vinylfy calculates the feature averages for a user's top 10 tracks, including: 
 
 - **Danceability**: How suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
@@ -35,8 +38,10 @@ Each audio track in Spotify contains audio feature information for that track. V
 
 - **Tempo**: Overall estimated tempo of a track in beats per minute (BPM).
 
-## **Design**
+## **Generated Design**
+---
 ### **Vinyl Cover Colour**
+---
 The colour of a user's vinyl cover is generated based on their most listened to genre, calculated from a user's top 10 artists.
 
 Inspired by reasearch and genre-visualization data from
@@ -57,12 +62,17 @@ Inspired by reasearch and genre-visualization data from
 
 If a user has multiple top genres, a gradient colour scheme will be applied utilizing colour-assignments from the tied genres.
 
-### **Vinyl Cover Design Colours**
+### **Vinyl Cover Design Accent Colours**
+---
 An algorithm was developed to generate a personalized colour on the 3-dimensional [CIELAB Colour Space](https://en.wikipedia.org/wiki/CIELAB_color_space), using features such as tempo, mode, and key.
 
-Based on [research from UC Berkely](https://escholarship.org/uc/item/7px9h0gg), the following colour-genre associations were discovered:
-![](./static/imgs/docs/major-minor.jpeg)
-![](./static/imgs/docs/emotional-ratings.jpeg)
+Based on [research from UC Berkeley](https://escholarship.org/uc/item/7px9h0gg), the following colour-genre associations were discovered:
+
+![](./static/imgs/docs/major-minor.jpeg) *Data from Palmer et al. (2013) illustrating the effect of mode and tempo on participant color choices. The four graphs show effects on color saturation, color lightness, and two hue dimensions (yellow vs. blue and red vs. green).*
+
+![](./static/imgs/docs/emotional-ratings.jpeg) *These data from Palmer et al. (2013) show the extremely high correlations between emotion ratings for a given piece of music (x-axis) and the average emotion rating of colors chosen as going well with that piece of music (y-axis) for four different emotion dimensions.*
+
+
 
 To summarize, it is shown that:
 
@@ -80,14 +90,15 @@ As well as
 
 
 ### **Vinyl Disk Colour**
+---
 
 
 ### **Vinyl Tracklist Outline**
+---
 
 The outline of a user's tracklist is generated based on the average loudness of their top 10 tracks.
 
 Lines are generated with the following styles, ranging from least loud (-60 dB) to most loud (0 dB): 
-
 1. **Dotted**: -60 dB to -46 dB
 2. **Dashed**: -45 dB to -31 dB
 3. **Solid**: -30 dB to -16 dB
