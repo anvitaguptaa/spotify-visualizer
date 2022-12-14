@@ -66,6 +66,9 @@ If a user has multiple top genres, a gradient colour scheme will be applied util
 ---
 An algorithm was developed to generate a personalized colour on the 3-dimensional [CIELAB Colour Space](https://en.wikipedia.org/wiki/CIELAB_color_space), using features such as tempo, mode, and key.
 
+![](./static/imgs/docs/CIELAB-color-space.jpeg)
+![](./static/imgs/docs/hue-angle-and-chroma.jpg)
+
 Based on [research from UC Berkeley](https://escholarship.org/uc/item/7px9h0gg), the following colour-genre associations were discovered:
 
 ![](./static/imgs/docs/major-minor.jpeg) *Data from Palmer et al. (2013) illustrating the effect of mode and tempo on participant color choices. The four graphs show effects on color saturation, color lightness, and two hue dimensions (yellow vs. blue and red vs. green).*
@@ -91,7 +94,7 @@ As well as
 
 ### **Vinyl Disk Colour**
 ---
-
+TODO
 
 ### **Vinyl Tracklist Outline**
 ---
@@ -99,8 +102,8 @@ As well as
 The outline of a user's tracklist is generated based on the average loudness of their top 10 tracks.
 
 Lines are generated with the following styles, ranging from least loud (-60 dB) to most loud (0 dB): 
-1. **Dotted**: -60 dB to -46 dB
-2. **Dashed**: -45 dB to -31 dB
-3. **Solid**: -30 dB to -16 dB
-4. **Double**: -15 dB to 0 dB
+- **Dotted**: -60 dB to -46 dB
+- **Dashed**: -45 dB to -31 dB
+- **Solid**: -30 dB to -16 dB
+- **Double**: -15 dB to 0 dB
 

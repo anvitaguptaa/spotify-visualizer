@@ -18,6 +18,8 @@ USERNAME = ''
 SCOPE = '''user-top-read user-read-recently-played 
            user-follow-read'''
 URL = 'https://api.spotify.com/v1/'
+
+# Limit is 11 to ensure no features ties
 TOP_LIMIT = 10
 
 genre_dict = {0 : 'rap', 1 : 'pop', 2 : 'r&b', 3 : 'indie', 4 : 'soul',
@@ -56,7 +58,8 @@ class Client:
 
 
     def parse_track_info(self):
-        top_tracks = self.client.current_user_top_tracks(limit=TOP_LIMIT, time_range='short_term')
+        # Limit + 1 to avoid any ties in feature averages
+        top_tracks = self.client.current_user_top_tracks(limit=(TOP_LIMIT + 1), time_range='short_term')
 
         for track in top_tracks['items']:
             self.top_track_info['track_arr'].append(track['name'].upper() + ' - ' + track['artists'][0]['name'].upper())
@@ -69,13 +72,16 @@ class Client:
             features = self.client.audio_features(id)
 
             for key, value in features[0].items():
+                if (key == 'mode'):
+                    print(key, value)
+            
                 if not key in self.features_info: 
                     break
 
                 self.features_info[key] += value
 
         for feature in self.features_info.keys():
-            self.features_info[feature] /= TOP_LIMIT
+            self.features_info[feature] /= (TOP_LIMIT + 1)
         
         # print(self.features_info)
 
@@ -111,7 +117,7 @@ class Client:
 
         max_keys = [key for key, value in self.genre_matches.items() 
                     if value == max(self.genre_matches.values())]
-        print(self.genre_matches)
+        # print(self.genre_matches)
         return max_keys
         
 
@@ -146,6 +152,7 @@ def vinyl():
     top_tracks = client.top_track_info['track_arr']
     top_genres = list(client.get_top_genres())
     features = client.features_info
+    print(features)
     # print(client.genre_matches)
 
     return render_template('main.html', name=name, top_tracks=top_tracks, top_genres=top_genres, features=features)
