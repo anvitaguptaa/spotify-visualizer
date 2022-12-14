@@ -4,7 +4,6 @@ Vinylfy is a web application which generates a customized vinyl design for users
 The application can be accessed from http://vinylfy.herokuapp.com/.
 
 ## **User Data**
----
 
 ### **Top Tracks & Artists**
 ---
