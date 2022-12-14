@@ -13,7 +13,7 @@ Affinity is a measure of the expected preference a user has for a particular tra
 
 ### **Audio Features**
 ---
-Each audio track in Spotify contains audio feature information for that track. Vinylfy calculates the feature averages for a user's top 10 tracks, including: 
+Each audio track in Spotify contains audio feature information for that track. Vinylfy calculates the feature averages for a user's top 11 tracks, including: 
 
 - **Danceability**: How suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.
 
@@ -100,7 +100,7 @@ Energy colours inspired by energy levels of [colors within the range of visible 
 ### **Vinyl Tracklist Outline**
 ---
 
-The outline of a user's tracklist is generated based on the average loudness of their top 10 tracks.
+The outline of a user's tracklist is generated based on the average loudness of their top 11 tracks.
 
 Lines are generated with the following styles, ranging from least loud (-60 dB) to most loud (0 dB): 
 - **Dotted**: -60 dB to -46 dB
