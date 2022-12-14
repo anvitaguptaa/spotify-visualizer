@@ -72,8 +72,8 @@ class Client:
             features = self.client.audio_features(id)
 
             for key, value in features[0].items():
-                if (key == 'mode'):
-                    print(key, value)
+                # if (key == 'mode'):
+                #     print(key, value)
             
                 if not key in self.features_info: 
                     break

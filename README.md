@@ -94,7 +94,9 @@ As well as
 
 ### **Vinyl Disk Colour**
 ---
-TODO
+Energy colours inspired by energy levels of [colors within the range of visible spectrum](https://www.britannica.com/science/color/The-visible-spectrum)
+
+
 
 ### **Vinyl Tracklist Outline**
 ---

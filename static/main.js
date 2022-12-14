@@ -4,6 +4,7 @@ const largeCover = document.querySelector(".large-cover");
 const coverContent = document.querySelector(".large-cover-inner");
 const innerBox = document.querySelector(".inner-box");
 const shapes = document.querySelectorAll(".shapes");
+const disk = document.querySelector(".label");
 // let shapes = document.getElementsByClassName('shapes');
 // console.log(shapes);
 let coverFlipped = false;
@@ -44,20 +45,21 @@ largeCover.addEventListener("click", () => {
 });
 
 // Abstract this
-var genre_dict = {'rap' : 'var(--dark-blue)', 
-                  'pop' : 'var(--sky-blue)',
-                  'r&b' : 'var(--purple)',
-                  'indie' : 'var(--green)',
-                  'soul' : 'var(--orange)',
-                  'rock' : 'var(--crimson)', 
-                  'country' : 'var(--yellow)', 
-                  'gospel' : 'var(--brown)', 
-                  'ambient' : 'var(--teal)', 
-                  'electronic' : 'var(--silver)', 
-                  'classical' : 'var(--lavender)', 
-                  'jazz' : 'var(--pink)', 
-                  'other' : 'var(--grey)'
-                }
+var genre_dict = {
+    'rap' : 'var(--dark-blue)', 
+    'pop' : 'var(--sky-blue)',
+    'r&b' : 'var(--purple)',
+    'indie' : 'var(--green)',
+    'soul' : 'var(--orange)',
+    'rock' : 'var(--crimson)', 
+    'country' : 'var(--yellow)', 
+    'gospel' : 'var(--brown)', 
+    'ambient' : 'var(--teal)', 
+    'electronic' : 'var(--silver)', 
+    'classical' : 'var(--lavender)', 
+    'jazz' : 'var(--pink)', 
+    'other' : 'var(--grey)'
+}
 
 
 function getColor(genre) {
@@ -181,9 +183,30 @@ function generateShapeColor(features) {
     return [l, a, b];
 }
 
+var energy_dict = {
+    0.125 : 'var(--wave1)',
+    0.250 : 'var(--wave2)',
+    0.375 : 'var(--wave3)',
+    0.5 : 'var(--wave4)',
+    0.625 : 'var(--wave5)',
+    0.750 : 'var(--wave6)',
+    0.875 : 'var(--wave7)',
+    1.0 : 'var(--wave8)',
+}
 
-function generateDiskColor() {
-
+function generateDiskColor(energy) {
+    var keys = Object.keys(energy_dict);
+    var color;
+    // console.log(energy, keys);
+    for (var i = 0, j = 1; i, j < keys.length; i++, j++) {
+        // console.log(i, j)
+        if ((energy >= keys[i]) && (energy <= keys[j])) {
+            color = energy_dict[keys[i]];
+            console.log(color);
+        }
+    }
+    disk.style.backgroundColor = color;
+    // console.log(color);
 }
 
 // No browser support for LAB so must convert to RGB
@@ -201,4 +224,5 @@ function customize(genresArr, features) {
     coverColor(genresArr);
     tracklistOutline(loudness);
     colorShapes(features);
+    generateDiskColor(features.energy);
 }

@@ -23,6 +23,18 @@
   --red: rgba(135, 26, 26, 0.9); /* Reggae */
   --crimson: #470e0e;/* Rock */
   --brown: #7d5f52; /* Gospel */
+
+  --wave8: #492c496e;
+  /* --wave */
+  --wave7: #2f2749;
+  --wave6: #283f43;
+  --wave5: #4854407d;
+  --wave4: #4f4f33;
+  --wave3: #713518;
+  --wave2: #452121;
+  --wave1: #440000;
+
+
 }
 
 body {
@@ -444,7 +456,7 @@ p {
 }
 
 .album .vinyl .label {
-  background-color: #AF8F80;
+  /* background-color: #AF8F80; */
   width: 50%;
   height: 50%;
   left: 25%;
@@ -453,8 +465,8 @@ p {
 
 .album .vinyl .hole {
   background-color: #eee;
-  width: 5%;
-  height: 5%;
+  width: 10%;
+  height: 10%;
   margin: 45% auto 0 auto;
 }
 
