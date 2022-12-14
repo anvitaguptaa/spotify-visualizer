@@ -38,7 +38,7 @@ Each audio track in Spotify contains audio feature information for that track. V
 - **Tempo**: Overall estimated tempo of a track in beats per minute (BPM).
 
 ## **Generated Design**
----
+
 ### **Vinyl Cover Colour**
 ---
 The colour of a user's vinyl cover is generated based on their most listened to genre, calculated from a user's top 10 artists.
