@@ -4,6 +4,8 @@ const largeCover = document.querySelector(".large-cover");
 const coverContent = document.querySelector(".large-cover-inner");
 const innerBox = document.querySelector(".inner-box");
 const shapes = document.querySelectorAll(".shapes");
+const shadows = document.querySelectorAll(".shadows");
+console.log(shadows)
 const disk = document.querySelector(".label");
 // let shapes = document.getElementsByClassName('shapes');
 // console.log(shapes);
@@ -167,7 +169,7 @@ function getMode(mode) {
 }
 
 
-function generateShapeColor(features) {
+function generateShapeColors(features) {
     var tempo = getTempo(features.tempo);
     console.log(tempo);
     var mode = getMode(features.mode);
@@ -177,6 +179,8 @@ function generateShapeColor(features) {
     var lab_values = color_map[key];
 
     var l = lab_values[0];
+    // var s = lab_values[0] - 40;
+    // var d = lab_values[0] + 30;
     var a = lab_values[1];
     var b = lab_values[2];
 
@@ -194,7 +198,7 @@ var energy_dict = {
     1.0 : 'var(--wave8)',
 }
 
-function generateDiskColor(energy) {
+function generateGradientColor(energy) {
     var keys = Object.keys(energy_dict);
     var color;
     // console.log(energy, keys);
@@ -211,10 +215,16 @@ function generateDiskColor(energy) {
 
 // No browser support for LAB so must convert to RGB
 function colorShapes(features) {
-    var color = labToRGB(generateShapeColor(features));
-    for (let i = 0; i < shapes.length; i++) {
-        shapes[i].style.background = color;
-    }
+    var col_arr = generateShapeColors(features);
+    var shapes_color = labToRGB(col_arr);
+    var shadows_color = labToRGB([(col_arr[0] - 40), col_arr[1], col_arr[2]]);
+    var disk_color = labToRGB([(col_arr[0] + 25) , col_arr[1], col_arr[2] + 100]);
+
+    disk.style.backgroundColor = disk_color;
+    for (let i = 0, j = 0; i < shapes.length, j < shadows.length; i++, j++) {
+        shapes[i].style.background = shapes_color;
+        shadows[j].style.background = shadows_color;
+    } 
 }
 
 // Big function to run all customization

@@ -93,7 +93,11 @@ As well as
 
 ### **Vinyl Disk Colour**
 ---
-Energy colours inspired by energy levels of [colors within the range of visible spectrum](https://www.britannica.com/science/color/The-visible-spectrum)
+TODO
+
+### Cover Block Design Colour
+
+Design colours inspired by energy levels of [colors within the range of visible spectrum](https://www.britannica.com/science/color/The-visible-spectrum)
 
 
 
