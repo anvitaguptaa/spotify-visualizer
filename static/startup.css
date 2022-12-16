@@ -121,7 +121,8 @@ h2 {
     width:160px;
     height:160px;
     border-radius: 150px;
-    background:#1DB954;
+    background:#4978bb;
+    /* background:#1DB954; */
     content:'';
     -webkit-animation: spin 5s linear infinite;
     animation: spin 5s linear infinite;
@@ -133,7 +134,8 @@ h2 {
     left:10px;
     width:140px;
     height:70px;
-    background:#1DB954;
+    /* background:#1DB954; */
+    background:#2c4465;
     border-radius: 90px 90px 0 0;
     content:'';
 }
@@ -295,7 +297,7 @@ h2 {
     left:3%;
     width:25px;
     height:25px;
-    background:#e30000;
+    background:#667188;
     border-radius: 30px;
     transform: rotateZ(30deg) skewX(-25deg);
     -ms-transform: rotateZ(30deg) skewX(-25deg);
