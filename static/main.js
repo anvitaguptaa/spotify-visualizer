@@ -4,6 +4,7 @@ const largeCover = document.querySelector(".large-cover");
 const coverContent = document.querySelector(".large-cover-inner");
 const innerBox = document.querySelector(".inner-box");
 const gradient = document.querySelector(".gradient-circle");
+const largeGradient = document.querySelector(".gradient-circle-large");
 const shapes = document.querySelectorAll(".shapes");
 const shadows = document.querySelectorAll(".shadows");
 console.log(shadows)
@@ -228,6 +229,7 @@ function generateGradientColor(energy) {
     }
 
     gradient.style.background = `radial-gradient(50px at center, ${color}, var(--dark-blue))`;
+    largeGradient.style.background = `radial-gradient(110px at center, ${color}, var(--dark-blue))`;
 }
 
 // Big function to run all customization
