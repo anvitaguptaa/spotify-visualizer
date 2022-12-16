@@ -1,9 +1,21 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+
+.gen-button {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color: #000;
+    /* border-color: white; */
+}
+
 body{
     background:#eee;
     color: rgb(18, 18, 18);
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
 }
 
 h1 {
@@ -12,6 +24,7 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
     font-size: 60px;
+    margin-bottom: 5%;
 }
 
 h2 {
@@ -34,6 +47,12 @@ h2 {
     h2 {
         margin-top: 7%;
     }
+
+    .gen-button {
+        height: 5%;
+        width: 40%; 
+        margin-top: 3%;
+    }
 }
 
 @media (min-width: 1025px) {
@@ -48,6 +67,12 @@ h2 {
 
     h2 {
         margin-top: 3%;
+    }
+
+    .gen-button {
+        width: 30%; 
+        height: 8%;
+        margin-top: 0;
     }
 
 }
