@@ -60,17 +60,30 @@ body {
   z-index: 1;
 }
 
+.gradient-circle {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  margin-top: -39%; 
+  margin-left: 35%;
+  margin-right: auto;
+  z-index: -2;
+  width: 30%;
+  height: 30%;
+  -moz-box-shadow: 0px 0px 30px  #181c3d;
+  -webkit-box-shadow: 0px 0px 30px  #181c3d;
+  box-shadow: 0px 0px 30px  #181c3d;
+}
+
+
 .shapes {
   border-radius: 50%;
   z-index: -1;
-  /* background: lab(93 -47 25 / 20%); */
-  /* background: #000; */
 }
 
 .shadows {
   border-radius: 50%;
   z-index: -1;
-  /* background: #000; */
 }
 
 #circle1 {

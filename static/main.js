@@ -3,6 +3,7 @@ const vinyl = document.querySelector(".vinyl");
 const largeCover = document.querySelector(".large-cover");
 const coverContent = document.querySelector(".large-cover-inner");
 const innerBox = document.querySelector(".inner-box");
+const gradient = document.querySelector(".gradient-circle");
 const shapes = document.querySelectorAll(".shapes");
 const shadows = document.querySelectorAll(".shadows");
 console.log(shadows)
@@ -187,6 +188,22 @@ function generateShapeColors(features) {
     return [l, a, b];
 }
 
+
+// No browser support for LAB so must convert to RGB
+function colorShapes(features) {
+    var col_arr = generateShapeColors(features);
+    var shapes_color = labToRGB(col_arr);
+    var shadows_color = labToRGB([(col_arr[0] - 40), col_arr[1], col_arr[2]]);
+    var disk_color = labToRGB([(col_arr[0] + 25) , col_arr[1], col_arr[2] + 100]);
+
+    disk.style.backgroundColor = disk_color;
+    for (let i = 0, j = 0; i < shapes.length, j < shadows.length; i++, j++) {
+        shapes[i].style.background = shapes_color;
+        shadows[j].style.background = shadows_color;
+    } 
+}
+
+
 var energy_dict = {
     0.125 : 'var(--wave1)',
     0.250 : 'var(--wave2)',
@@ -209,22 +226,8 @@ function generateGradientColor(energy) {
             console.log(color);
         }
     }
-    disk.style.backgroundColor = color;
-    // console.log(color);
-}
 
-// No browser support for LAB so must convert to RGB
-function colorShapes(features) {
-    var col_arr = generateShapeColors(features);
-    var shapes_color = labToRGB(col_arr);
-    var shadows_color = labToRGB([(col_arr[0] - 40), col_arr[1], col_arr[2]]);
-    var disk_color = labToRGB([(col_arr[0] + 25) , col_arr[1], col_arr[2] + 100]);
-
-    disk.style.backgroundColor = disk_color;
-    for (let i = 0, j = 0; i < shapes.length, j < shadows.length; i++, j++) {
-        shapes[i].style.background = shapes_color;
-        shadows[j].style.background = shadows_color;
-    } 
+    gradient.style.background = `radial-gradient(50px at center, ${color}, var(--dark-blue))`;
 }
 
 // Big function to run all customization
@@ -234,5 +237,5 @@ function customize(genresArr, features) {
     coverColor(genresArr);
     tracklistOutline(loudness);
     colorShapes(features);
-    generateDiskColor(features.energy);
+    generateGradientColor(features.energy);
 }
