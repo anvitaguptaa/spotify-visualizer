@@ -15,8 +15,7 @@ CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
 CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
 REDIRECT_URI = os.getenv('SPOTIPY_REDIRECT_URI')
 USERNAME = ''
-SCOPE = '''user-top-read user-read-recently-played 
-           user-follow-read'''
+SCOPE = 'user-top-read'
 URL = 'https://api.spotify.com/v1/'
 
 # Limit is 11 to ensure no features ties
