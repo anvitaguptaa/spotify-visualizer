@@ -83,7 +83,7 @@ class Client:
 
 
     def parse_artists_info(self):
-        top_artists = self.client.current_user_top_artists(limit=TOP_LIMIT, time_range='long_term')
+        top_artists = self.client.current_user_top_artists(limit=TOP_LIMIT, time_range='short_term')
 
         for artist in top_artists['items']:
             self.top_artist_info[artist['name']] = artist['genres']
@@ -144,9 +144,11 @@ def vinyl():
     client.parse_track_info()
     client.parse_features_info()
     client.parse_artists_info()
+    print(client.top_artist_info)
 
     top_tracks = client.top_track_info['track_arr']
     top_genres = list(client.get_top_genres())
+    print(client.genre_matches)
     features = client.features_info
     print(features)
     # print(client.genre_matches)

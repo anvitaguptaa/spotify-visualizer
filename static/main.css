@@ -218,6 +218,11 @@ body {
   .album {
     margin-left: 2rem;
   }
+
+  .link {
+    text-align: right;
+    margin-right: 2.5rem;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -228,6 +233,10 @@ body {
 
   .album {
     margin-left: 3.3rem;
+  }
+
+  .link {
+    margin-left: 52.5%;
   }
 }
 
@@ -521,6 +530,27 @@ p {
   font-size: 70%;
 }
 
+.link {
+  font-size: medium;
+  margin-top: 1%;
+  /* margin-left: 52.5%; */
+}
+
+.link:link {
+  color: blue;
+}
+
+.link:visited {
+  color: purple;
+}
+
+.link:hover {
+color: darkblue;
+}
+
+.link:active {
+color: darkblue;
+}
 /*Vinyl Style*/
 
 .albumVinyl .round {
