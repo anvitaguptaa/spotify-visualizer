@@ -1,6 +1,9 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+p {
+    margin-top: 1%;
+}
 
 .gen-button {
     font-family: 'Open Sans', sans-serif;
@@ -120,35 +123,9 @@ h2 {
     left:95px;
     width:160px;
     height:160px;
-    border-radius: 150px;
-    background:#4978bb;
-    /* background:#1DB954; */
-    content:'';
+    border-radius: 50%;
     -webkit-animation: spin 5s linear infinite;
     animation: spin 5s linear infinite;
-}
-
-#label:after{
-    position:absolute;
-    top:10px;
-    left:10px;
-    width:140px;
-    height:70px;
-    /* background:#1DB954; */
-    background:#2c4465;
-    border-radius: 90px 90px 0 0;
-    content:'';
-}
-
-#label:before{
-    position:absolute;
-    top:5px;
-    left:5px;
-    width:150px;
-    height:150px;
-    background:#121212;
-    border-radius: 90px;
-    content:'';
 }
 
 #axis-shadow{
@@ -297,7 +274,7 @@ h2 {
     left:3%;
     width:25px;
     height:25px;
-    background:#667188;
+    background:#000;
     border-radius: 30px;
     transform: rotateZ(30deg) skewX(-25deg);
     -ms-transform: rotateZ(30deg) skewX(-25deg);
@@ -305,6 +282,31 @@ h2 {
     -webkit-transform: rotateZ(30deg) skewX(-25deg);
     box-shadow:2px 2px #1a1a1a;
     z-index:10;
+}
+
+.external {
+    margin-top: -1%;
+    text-align: center;
+    font-size: medium;
+}
+
+.external:link {
+    color: blue;
+}
+  
+  /* visited link */
+.external:visited {
+    color: purple;
+}
+
+/* mouse over link */
+.external:hover {
+color: darkblue;
+}
+
+/* selected link */
+.external:active {
+color: darkblue;
 }
 
 #button:hover{
