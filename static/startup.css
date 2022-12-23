@@ -10,7 +10,6 @@ p {
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
     color: #000;
-    /* border-color: white; */
 }
 
 body{
@@ -293,18 +292,15 @@ h2 {
 .external:link {
     color: blue;
 }
-  
-  /* visited link */
+
 .external:visited {
     color: purple;
 }
 
-/* mouse over link */
 .external:hover {
 color: darkblue;
 }
 
-/* selected link */
 .external:active {
 color: darkblue;
 }
