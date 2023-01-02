@@ -4,6 +4,7 @@ Vinylfy is a web application which generates a customized vinyl design for users
 The application can be accessed from http://vinylfy.herokuapp.com/.
 
 ## **User Data**
+___
 
 ### **Top Tracks & Artists**
 ---
@@ -38,6 +39,7 @@ Each audio track in Spotify contains audio feature information for that track. V
 - **Tempo**: Overall estimated tempo of a track in beats per minute (BPM).
 
 ## **Generated Design**
+___
 
 ### **Vinyl Cover Colour**
 ---
@@ -75,7 +77,6 @@ Based on [research from UC Berkeley](https://escholarship.org/uc/item/7px9h0gg),
 ![](./static/imgs/docs/emotional-ratings.jpeg) *These data from Palmer et al. (2013) show the extremely high correlations between emotion ratings for a given piece of music (x-axis) and the average emotion rating of colors chosen as going well with that piece of music (y-axis) for four different emotion dimensions.*
 
 
-
 To summarize, it is shown that:
 
 | Tempo  | Mode  | Saturation  | Light | Blue/Yellow | Green/Red |
@@ -87,19 +88,26 @@ To summarize, it is shown that:
 | Fast   | Minor | Saturated   | Light | Both        | Both      |
 | Fast   | Major | Saturated   | Light | Yellow      | Both      |
 
-As well as
-- *Higher pitch = lighter colours*
-
+From this research, a custom CIELAB color is developed to design the vinyl cover accent colors, using the user's average mode and tempo data.
 
 ### **Vinyl Disk Colour**
 ---
-TODO
+The vinyl disk accent color is developed from the previously generated CIELAB color, with an increase in lightness and yellow hue.
 
-### Cover Block Design Colour
+### **Vinyl Cover Circular Gradient Colour**
+___
 
-Design colours inspired by energy levels of [colors within the range of visible spectrum](https://www.britannica.com/science/color/The-visible-spectrum)
+Design colours inspired by energy levels of [colors within the range of visible spectrum](https://www.britannica.com/science/color/The-visible-spectrum).
 
-
+A user's average track energy data is used to generate the color with the following associations:
+- ![#ff0000](https://placehold.co/15x15/ff0000/ff0000.png) `Red (Limit)` : 0 to 0.125
+-  ![#850000](https://placehold.co/15x15/850000/850000.png) `Red` : 0.125 to 0.25
+-  ![#ff8000](https://placehold.co/15x15/ff8000/ff8000.png) `Orange` : 0.25 to 0.375
+-  ![#ffff33](https://placehold.co/15x15/ffff33/ffff33.png) `Yellow` : 0.375 to 0.5FF6666
+-  ![#33ff33](https://placehold.co/15x15/33ff33/33ff33.png) `Green` : 0.5 to 0.625 
+-  ![#33ffff](https://placehold.co/15x15/33ffff/33ffff.png) `Cyan` : 0.625 to 0.75
+-  ![#0011ff](https://placehold.co/15x15/0011ff/0011ff.png) `Blue` : 0.75 to 0.875
+-  ![#9933ff](https://placehold.co/15x15/9933ff/9933ff.png) `Violet (Limit)` : 0.875 to 1
 
 ### **Vinyl Tracklist Outline**
 ---

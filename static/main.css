@@ -23,14 +23,14 @@
   --crimson: #470e0e;/* Rock */
   --brown: #7d5f52; /* Gospel */
 
-  --wave8: #ff00ff6e;
-  --wave7: #3c00ff7d;
-  --wave6: #00d9ff7e;
-  --wave5: hsla(96, 100%, 50%, 0.494);
-  --wave4: hsla(60, 22%, 25%, 0.492);
-  --wave3: hsla(20, 100%, 50%, 0.492);
-  --wave2: #452121;
-  --wave1: #440000;
+  --wave8: #9933ff80;
+  --wave7: #0011ff80;
+  --wave6: #33ffff81;
+  --wave5: #33ff3380;
+  --wave4: #ffff3380;
+  --wave3: #ff800082;
+  --wave2: #85000081;
+  --wave1: #ff000081;
 
 
 }
